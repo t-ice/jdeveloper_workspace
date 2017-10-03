@@ -4,13 +4,13 @@
   <AppModuleConfigBag ApplicationName="model.AppModule">
     <AppModuleConfig name="AppModuleLocal" jbo.project="model.Model" ApplicationName="model.AppModule"
                      DeployPlatform="LOCAL">
-      <Database jbo.TypeMapEntries="OracleApps"/>
+      <Database JDBCDataSource="java:comp/env/jdbc/OracleDBDS"/>
       <Security AppModuleJndiName="model.AppModule"/>
     </AppModuleConfig>
     <AppModuleConfig name="AppModuleShared" jbo.project="model.Model" ApplicationName="model.AppModule"
                      DeployPlatform="LOCAL">
       <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
-      <Database jbo.TypeMapEntries="OracleApps"/>
+      <Database JDBCDataSource="java:comp/env/jdbc/OracleDBDS"/>
       <Security AppModuleJndiName="model.AppModule"/>
     </AppModuleConfig>
   </AppModuleConfigBag>

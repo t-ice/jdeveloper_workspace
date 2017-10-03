@@ -28,7 +28,6 @@ af|panelHeader::title-text0 {
 
 af|panelHeader::content0 {
     border: 1px solid #D6DFE6;
-    border-radius: 2px;
     background-color: #ededed;
 }
 
@@ -37,17 +36,11 @@ af|selectOneChoice::content {
     border-radius: 2px;
     height: 22px;
 }
-
-.menu af|outputText {
+/* Ueberschrift outputText*/
+.menu div {
     font-size: large;
     font-family: Segoe UI;
     font-weight: 600;
-}
-
-.menu af|navigationPane-list {
-    margin-left: 20px;
-    font-family: Segoe UI;
-    font-weight: 400;
 }
 
 .menu af|navigationPane-list::bullet:selected {
@@ -55,11 +48,23 @@ af|selectOneChoice::content {
 }
 
 .menu af|navigationPane-list::link:selected {
-    font-size: medium;
+    font-weight: 700;
+}
+
+.menu {
+    margin: 15px;
+}
+
+.content {
+    margin: 15px;
+    /*border: 1px solid #0072AB;*/
 }
 
 .menu af|navigationPane-list::link {
     font-size: medium;
+    margin-left: 20px;
+    font-family: Segoe UI;
+    font-weight: 400;
 }
 
 .menu af|navigationPane-list {
@@ -79,4 +84,27 @@ af|selectOneChoice::content {
 
 af|button::text {
     margin-bottom: -2px;
+}
+
+.box {
+    background-color: White;
+    border: 1px solid #D6DFE6;
+    padding: 5px;
+}
+
+af|panelBox::content {
+    padding-top: 10px;
+}
+
+af|panelBox::header-element {
+    font-family: Segoe UI;
+    font-weight: 500;
+    font-size: medium;
+}
+
+af|panelBox::header-text {
+    height: 20px;
+}
+
+af|panelBox {
 }

@@ -9,9 +9,8 @@
   PackageName="model">
   <DesignTime>
     <Attr Name="_DTExpressionTypeChecking" Value="true"/>
-    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_jprName" Value="../../Model.jpr"/>
-    <Attr Name="_OfflineConnection" Value="DATABASE"/>
+    <Attr Name="_NamedConnection" Value="OracleDB"/>
     <Attr Name="_appModuleNames0" Value="model.AppModule"/>
   </DesignTime>
   <Containee
@@ -19,9 +18,11 @@
     PackageName="model"
     ObjectType="JboPackage">
     <DesignTime>
-      <Attr Name="_AM" Value="true"/>
       <Attr Name="_EO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
       <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
+      <Attr Name="_AM" Value="true"/>
     </DesignTime>
   </Containee>
 </JboProject>

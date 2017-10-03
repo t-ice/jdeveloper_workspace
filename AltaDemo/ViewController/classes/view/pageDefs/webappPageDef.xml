@@ -4,18 +4,58 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Personen" RangeSize="25" DataControl="AppModuleDataControl" id="PersonenIterator"/>
+    <iterator Binds="EmployeesView1" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesView1Iterator"/>
+    <iterator Binds="EmployeesView2" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesView2Iterator"/>
+    <iterator Binds="DepartmentsView2" RangeSize="25" DataControl="AppModuleDataControl" id="DepartmentsView2Iterator"/>
   </executables>
   <bindings>
-    <tree IterBinding="PersonenIterator" id="Personen">
-      <nodeDefinition DefName="model.PersonenVO" Name="Personen0">
+    
+    <tree IterBinding="EmployeesView1Iterator" id="EmployeesView1">
+      <nodeDefinition DefName="model.EmployeesView" Name="EmployeesView10">
         <AttrNames>
-          <Item Value="Name"/>
-          <Item Value="Abteilung"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="PersonenIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <action IterBinding="PersonenIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="EmployeesView2Iterator" id="EmployeesView2">
+      <nodeDefinition DefName="model.EmployeesView" Name="EmployeesView20">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DepartmentsView2Iterator" id="DepartmentsView2">
+      <nodeDefinition DefName="model.DepartmentsView" Name="DepartmentsView20">
+        <AttrNames>
+          <Item Value="DepartmentName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EmployeesView1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="EmployeesView1Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="EmployeesView2Iterator" id="EmployeesView21">
+      <nodeDefinition DefName="model.EmployeesView" Name="EmployeesView210">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
