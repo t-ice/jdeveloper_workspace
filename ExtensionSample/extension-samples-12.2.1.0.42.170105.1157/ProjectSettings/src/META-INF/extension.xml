@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/ProjectSettings/src/META-INF/extension.xml /main/13 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   aalmiray    09/21/09 - XbranchMerge aalmiray_fix_esdk_samples from
+                          st_jdevadf_patchset_ias
+   ltribble    08/16/08 - 
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       04/04/07 - Bug 5957834 - Use UTF-8
+   bduff       03/28/07 - Bug 5957951 - fix out-of-date description. Also
+                          convert registration of project properties page and
+                          action to use declarative hooks.
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           version="11.1.1"
+           esdk-version="1.0"
+           id="oracle.ide.extsamples.projectsettings">
+           
+  <name>ESDK Sample - ProjectSettings</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+
+      <!-- 
+        Define an action that will be used in various menus and toolbars.
+        You can set any Swing action property on the action. The controller
+        class implements oracle.ide.controller.Controller and determines
+        when the action is enabled and what it does.  
+       -->
+      <actions xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <action id="Samples.CMDID_DUMP_MYJPR_PROPS">
+          <properties>
+            <!--
+             You can use an ampersand (escaped as &amp;) in the Name property
+             to specify the mnemonic for any menu items containing the action.
+             -->
+            <property name="Name">ESDK Sample: Dump My Project Properties</property>
+             <!-- use an icon, stealing this one from predefined icons              
+                  make sure you have oracle.icon as a required bundle to
+                  pick up this icon at run time from the icons module  -->            
+            <property name="SmallIcon">${OracleIcons.PROPERTIES}</property>
+            <property name="LongDescription">ESDK Sample: Dump my project properties</property>
+              </properties>
+        </action>
+      </actions> 
+     
+      <controllers xmlns="http://xmlns.oracle.com/ide/extension">
+        <controller class="oracle.ide.extsamples.projectsettings.DumpMenuController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="Samples.CMDID_DUMP_MYJPR_PROPS">
+                <label>ESDK Sample: Dump My Project Properties</label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller>
+      </controllers>
+
+      <menu-hook xmlns="http://jcp.org/jsr/198/extension-manifest">
+          <!-- 
+            Add the action in its own separator group at the top of the Tools
+            menu. 
+          -->
+         <menus> 
+           <menubar id="javax.ide.view.MAIN_WINDOW_MENUBAR_ID">
+                  <!--
+                     There is no constant for "Tools" yet.
+                     Keep an eye out for a constant.
+                     The original constant in code was
+                     IdeMainWindow.MENU_TOOLS.
+                  -->
+            <menu id="Tools">
+               <section id="esdksample.customsection" before="javax.ide.NEW_SECTION_ID">
+                 <item action-ref="Samples.CMDID_DUMP_MYJPR_PROPS"></item>
+               </section>
+             </menu>
+           </menubar>
+         </menus>
+      </menu-hook>
+      
+      <settings-ui-hook xmlns="http://xmlns.oracle.com/ide/extension">
+        <page id="esdksample.ownerinfo" parent-idref="/Project">
+          <label>ESDK Sample: Owner Info</label>
+          <tooltip>ESDK Sample for showing preferences entry</tooltip>
+          <traversable-class>oracle.ide.extsamples.projectsettings.ProjectOwnerPage</traversable-class>          
+        </page>
+      </settings-ui-hook>
+
+    </triggers>
+  </trigger-hooks>
+  
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <addins>
+        <addin>oracle.ide.extsamples.projectsettings.ProjectSettingsAddin</addin>
+      </addins>
+    </jdeveloper-hook>
+  </hooks>
+</extension> 
+        

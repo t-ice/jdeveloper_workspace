@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/UpdateCenter/src/META-INF/extension.xml /main/6 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   bduff       04/04/07 - Bug 5957834 - Use UTF-8
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.ide.extsamples.updatecenter"
+           version="11.1.1"
+           esdk-version="1.0">
+  <name>ESDK Sample - UpdateCenter</name>
+  <owner>Oracle</owner>
+  
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+
+  <hooks>
+    
+    <update-hook xmlns="http://xmlns.oracle.com/ide/update-hook">
+      <!-- Provide some unique id for your update center. This should never
+           change between releases. -->
+      <update-center id="oracle.jdeveloper.sample.updatecenter">
+        <!-- This name appears on the Source page of Check for Updates. -->
+        <name>*** Sample Update Center (from ESDK)</name>
+        <!-- Change this to the URL of your center. -->
+        <url>http://www.oracle.com/products/jdev/101/update/center.xml</url>
+      </update-center>
+    </update-hook>
+    
+  </hooks>
+</extension>              

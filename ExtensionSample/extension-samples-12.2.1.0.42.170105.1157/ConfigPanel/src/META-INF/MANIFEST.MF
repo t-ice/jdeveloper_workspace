@@ -1,0 +1,6 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.ide,
+ oracle.uic,
+ oracle.javatools-nodeps,
+ oracle.idert,
+ oracle.javatools

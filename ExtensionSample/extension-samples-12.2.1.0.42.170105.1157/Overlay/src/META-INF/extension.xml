@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/Overlay/src/META-INF/extension.xml /main/8 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   bduff       04/04/07 - Bug 5957834 - Use UTF-8
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.ide.extsamples.overlay"
+           version="11.1.1"
+           esdk-version="1.0">
+           
+  <name>ESDK Sample - Overlay</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+       
+
+      <!-- 
+        Define an action that will be used in various menus and toolbars.
+        You can set any Swing action property on the action. The controller
+        class implements oracle.ide.controller.Controller and determines
+        when the action is enabled and what it does.
+        
+        You can use an ampersand (escaped as &amp;) in the Name property
+        to specify the mnemonic for any menu items containing the action.
+      -->
+      <actions xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <action id="sample.cmd.showLabelOverlay">
+          <properties>
+            <property name="Name">ESDK Sample : Show Label Overlay</property>
+             <!-- use an icon, stealing this one from predefined icons              
+                  make sure you have oracle.icon as a required bundle to
+                  pick up this icon at run time from the icons module  -->
+            <property name="SmallIcon">${OracleIcons.LABEL}</property>
+          </properties>
+        </action>
+        <action id="sample.cmd.showIconOverlay">
+          <properties>
+            <property name="Name">ESDK Sample : Show Icon Overlay</property>
+             <!-- use an icon, stealing this one from predefined icons              
+                  make sure you have oracle.icon as a required bundle to
+                  pick up this icon at run time from the icons module  -->
+            <property name="SmallIcon">${OracleIcons.LABEL}</property>
+          </properties>
+        </action>        
+        <action id="sample.cmd.showComboOverlay">
+         <properties>
+           <property name="Name">ESDK Sample : Show Combined Overlay</property>
+            <!-- use an icon, stealing this one from predefined icons              
+                 make sure you have oracle.icon as a required bundle to
+                 pick up this icon at run time from the icons module  -->
+           <property name="SmallIcon">${OracleIcons.LABEL}</property>
+         </properties>
+       </action> 
+        <action id="sample.cmd.showTooltipOverlay">
+          <properties>
+            <property name="Name">ESDK Sample : Show Tooltip Overlay</property>
+             <!-- use an icon, stealing this one from predefined icons              
+                  make sure you have oracle.icon as a required bundle to
+                  pick up this icon at run time from the icons module  -->
+            <property name="SmallIcon">${OracleIcons.LABEL}</property>
+          </properties>
+        </action>
+        <action id="sample.cmd.removeAllOverlays">
+          <properties>
+            <property name="Name">ESDK Sample : Remove Overlays</property>
+             <!-- use an icon, stealing this one from predefined icons              
+                  make sure you have oracle.icon as a required bundle to
+                  pick up this icon at run time from the icons module  -->
+            <property name="SmallIcon">${OracleIcons.LABEL}</property>
+          </properties>
+        </action>  
+      </actions>
+
+      <controllers xmlns="http://xmlns.oracle.com/ide/extension">
+        <controller class="oracle.ide.extsamples.overlay.OverlayController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="sample.cmd.showLabelOverlay">
+                <label>ESDK Sample : Show Label Overlay</label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller>
+        
+        <controller class="oracle.ide.extsamples.overlay.OverlayController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="sample.cmd.showIconOverlay">
+                <label>ESDK Sample : Show Icon Overlay</label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller>
+        
+        <controller class="oracle.ide.extsamples.overlay.OverlayController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="sample.cmd.showTooltipOverlay">
+                <label>ESDK Sample : Show Tooltip Overlay</label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller>
+        
+        <controller class="oracle.ide.extsamples.overlay.OverlayController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="sample.cmd.showComboOverlay">
+                <label>ESDK Sample : Show Combined Overlay</label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller>
+        
+        <controller class="oracle.ide.extsamples.overlay.OverlayController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="sample.cmd.removeAllOverlays">
+                <label>ESDK Sample : Remove All Overlays</label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller> 
+      </controllers>
+      <!--
+        Install context menus in the navigator, editor, and structure pane (explorer)
+        which use the same action defined above.
+      -->
+      <context-menu-hook rule="always-enabled">
+        <site idref="navigator, editor, explorer"/>
+          <menu>
+            <!-- 'weight' is used to control where the section appears in
+             the menu. Weights are sorted in ascending order, each unique
+             value is its own section. -->
+            <!-- section element must be in namespace
+             http://jcp.org/jsr/198/extension-manifest. -->
+            <section xmlns="http://jcp.org/jsr/198/extension-manifest" id="MY_CUSTOM_MENU_SECTION_ONE" weight="1.0">
+              <!-- For menu items and submenus, weight determines the
+               order within a menu section. Items are sorted in ascending
+               order or in the order they are added if the weight is not
+               unique. -->
+             <item action-ref="sample.cmd.showLabelOverlay"></item>
+             <item action-ref="sample.cmd.showIconOverlay"></item>
+             <item action-ref="sample.cmd.showTooltipOverlay"></item>
+             <item action-ref="sample.cmd.removeAllOverlays"></item>
+             <item action-ref="sample.cmd.showComboOverlay"></item>
+           </section>
+         </menu>
+      </context-menu-hook>
+     
+   </triggers>
+ </trigger-hooks>
+</extension>            

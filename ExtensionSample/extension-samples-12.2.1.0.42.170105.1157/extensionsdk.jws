@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jws:workspace xmlns:jws="http://xmlns.oracle.com/ide/project">
+   <hash n="component-versions">
+      <value n="oracle.adf.share.dt.migration.jps.JaznCredStoreMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.adf.share.dt.migration.wsm.PolicyAttachmentMigratorHelper" v="12.1.2.0.0"/>
+      <value n="oracle.adfdt.controller.adfc.source.migration.SavePointDataSourceForWLSMigrator" v="11.1.1.1.0"/>
+      <value n="oracle.adfdtinternal.model.ide.security.extension.AdfSecurityMigrator" v="11.1.1.1.0.13"/>
+      <value n="oracle.ide.model.Project" v="10.1.3.0.1;10.1.3.0.5;11.1.1.0.0;11.1.1.1.0;11.1.2.0.0;12.1.2.0.0;12.1.3.0.0;12.2.1.0.0"/>
+      <value n="oracle.jbo.dt.jdevx.deployment.JbdProjectMigrator" v="11.1.2.0.0"/>
+      <value n="oracle.jdevimpl.appresources.ApplicationSrcDirMigrator" v="11.1.2.0.0"/>
+      <value n="oracle.jdevimpl.deploy.mar.MarMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.jdevimpl.deploy.migrators.AbramsJeeDeploymentMigrator" v="12.1.2.0.0"/>
+      <value n="oracle.jdevimpl.deploy.migrators.JeeDeploymentMigrator" v="12.1.2.0.0"/>
+      <value n="oracle.jdevimpl.xml.oc4j.ds.DataSourcesMigratorHelper" v="10.1.3.0.4;11.1.1.0.0"/>
+      <value n="oracle.jdevimpl.xml.oc4j.jps.JpsConfigMigratorHelper" v="11.1.1.1.0.1;12.1.4.0.0"/>
+      <value n="oracle.jdevimpl.xml.wl.WeblogicMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.mds.internal.dt.deploy.base.MarMigratorHelper" v="11.1.1.1.0"/>
+      <value n="oracle.mds.internal.dt.ide.migrator.MDSConfigMigratorHelper" v="11.1.1.0.5313"/>
+   </hash>
+   <list n="contentSets">
+      <string v="oracle.jdeveloper.model.PathsConfiguration/ApplicationSrcContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/ADFContentSet"/>
+      <string v="oracle.mds.internal.dt.ide.appresources.MDSAppResourceCSProvider/MDSAppContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/ApplicationLevelMavenPOMContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/MobileResourcesContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/ApplicationBuildToolContentSet"/>
+   </list>
+   <list n="listOfChildren">
+      <hash><url n="URL" path="ApplicationOverview/ApplicationOverview.jpr"/></hash>
+      <hash><url n="URL" path="AuditRefactor/AuditRefactor.jpr"/></hash>
+      <hash><url n="URL" path="Balloon/Balloon.jpr"/></hash>
+      <hash><url n="URL" path="ClassBrowser/ClassBrowser.jpr"/></hash>
+      <hash><url n="URL" path="ClassGenerator/ClassGenerator.jpr"/></hash>
+      <hash><url n="URL" path="ClassSpy/ClassSpy.jpr"/></hash>
+      <hash><url n="URL" path="ClickableURL/ClickableURL.jpr"/></hash>
+      <hash><url n="URL" path="CodeInteraction/CodeInteraction.jpr"/></hash>
+      <hash><url n="URL" path="ConfigPanel/ConfigPanel.jpr"/></hash>
+      <hash><url n="URL" path="CPPageProvider/CPPageProvider.jpr"/></hash>
+      <hash><url n="URL" path="CreateDialog/CreateDialog.jpr"/></hash>
+      <hash><url n="URL" path="CreateStructure/CreateStructure.jpr"/></hash>
+      <hash><url n="URL" path="CustomEditor/CustomEditor.jpr"/></hash>
+      <hash><url n="URL" path="CustomExtensionHook/CustomExtensionHook.jpr"/></hash>
+      <hash><url n="URL" path="CustomNavigator/CustomNavigator.jpr"/></hash>
+      <hash><url n="URL" path="DebugObjectPreferences/DebugObjectPreferences.jpr"/></hash>
+      <hash><url n="URL" path="DockableWindow/DockableWindow.jpr"/></hash>
+      <hash><url n="URL" path="ExternalToolCreation/ExternalToolCreation.jpr"/></hash>
+      <hash><url n="URL" path="ExternalToolImportExport/ExternalToolImportExport.jpr"/></hash>
+      <hash><url n="URL" path="ExternalToolMacros/ExternalToolMacros.jpr"/></hash>
+      <hash><url n="URL" path="ExternalToolScanner/ExternalToolScanner.jpr"/></hash>
+      <hash><url n="URL" path="FirstSample/FirstSample.jpr"/></hash>
+      <hash><url n="URL" path="FlatEditor/FlatEditor.jpr"/></hash>
+      <hash><url n="URL" path="HelloX/HelloX.jpr"/></hash>
+      <hash><url n="URL" path="LayoutMenuFilter/LayoutMenuFilter.jpr"/></hash>
+      <hash><url n="URL" path="MethodCallCounter/MethodCallCounter.jpr"/></hash>
+      <hash><url n="URL" path="OpenNodes/OpenNodes.jpr"/></hash>
+      <hash><url n="URL" path="Overlay/Overlay.jpr"/></hash>
+      <hash><url n="URL" path="ProgressBar/ProgressBar.jpr"/></hash>
+      <hash><url n="URL" path="ProjectSettings/ProjectSettings.jpr"/></hash>
+      <hash><url n="URL" path="StructurePane/StructurePane.jpr"/></hash>
+      <hash><url n="URL" path="UpdateCenter/UpdateCenter.jpr"/></hash>
+   </list>
+   <value n="packageCounter" v="33"/>
+</jws:workspace>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/OpenNodes/src/META-INF/extension.xml /main/13 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   bduff       08/28/07 - Initial revision.
+-->
+<extension id="oracle.ide.extsamples.opennodes" version="11.1.2"
+           esdk-version="1.0" xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>ESDK Sample - Open Nodes</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+      <dockable-factory-hook xmlns="http://xmlns.oracle.com/ide/extension">
+        <factory id="openNodesSample" 
+                 class="oracle.ide.extsamples.opennodes.OpenNodesDockableFactory"/>
+      </dockable-factory-hook>
+      <actions xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <action id="esdksample.openNodeTracker">
+          <properties>
+            <property name="Name">Open Nodes</property>
+            <property name="SmallIcon">${OracleIcons.INDEX}</property>
+            <property name="LongDescription">Open Nodes</property>
+          </properties>
+          <command-class>oracle.ide.extsamples.opennodes.ViewCommand</command-class>
+        </action>
+      </actions>
+      
+     <controllers xmlns="http://xmlns.oracle.com/ide/extension">
+        <controller class="oracle.ide.extsamples.opennodes.VIewController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="esdksample.openNodeTracker">
+                <label>ESDK Sample : Open Nodes </label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller>
+      </controllers>
+
+      <menu-hook xmlns="http://jcp.org/jsr/198/extension-manifest">
+        <!-- 
+          Add the action in its own separator group at the top of the File 
+          menu. 
+        -->
+        <menus>
+          <menubar id="javax.ide.view.MAIN_WINDOW_MENUBAR_ID">
+            <menu id="View">
+              <section id="esdksample.customsection" before="javax.ide.NEW_SECTION_ID">
+                <item action-ref="esdksample.openNodeTracker"></item>
+              </section>
+            </menu>
+          </menubar>
+        </menus>
+       </menu-hook>
+      
+    </triggers>    
+  </trigger-hooks>
+  <hooks>
+    <dockable-hook xmlns="http://xmlns.oracle.com/ide/extension">
+      <dockable id="openNodesSample"/>
+    </dockable-hook>   
+  </hooks>
+</extension>

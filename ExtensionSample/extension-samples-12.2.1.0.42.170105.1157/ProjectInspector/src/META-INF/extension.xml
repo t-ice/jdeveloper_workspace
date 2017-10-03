@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.ide.extsamples.projectinspector" 
+           esdk-version="1.0"
+           version="11.0">
+  <name>Property Inspector</name>
+  <owner>Oracle</owner>
+
+  <dependencies>
+    <import>oracle.ide.inspector</import>
+  </dependencies>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <addins>
+        <addin>oracle.ide.extsamples.projectinspector.ProjectPIAddin</addin>
+      </addins>
+    </jdeveloper-hook>
+    
+    <!-- Define a sample property inspector hook -->
+    <!-- The definition of a property inspector hook is included here -->
+    <!-- for illustration purposes only. In general, a property inspector hook -->
+    <!-- is defined in the extension manifest of an extension defining a -->
+    <!-- property model -->
+    <property-inspector-hook xmlns="http://xmlns.oracle.com/ide/extension">
+    
+      <!-- Define property models. Property models are responsible for: -->
+      <!-- 1. defining the editable properties of an object -->
+      <!-- 2. getting and setting property values -->
+      <!-- 3. defining specialized property editors -->
+      <!-- 4. defining property categories -->
+      <inspectable-factories>
+        <inspectable-factory class="oracle.ide.extsamples.projectinspector.ProjectInspectableFactory"/>
+      </inspectable-factories>
+
+      <property-form-layouts>
+        <property-form-layout property-model-class="oracle.ide.extsamples.projectinspector.ProjectPropertyModel">
+            <category-layout id="Common" title="My Common">
+              <display-group id="oracle.ide.project.display-group.common">
+                <property id="oracle.ide.model.project.defaultPackage"/>
+                <property id="oracle.ide.model.project.outputPath"/>
+              </display-group>
+            </category-layout>
+            <category-layout id="Dependencies" title="Dependencies">
+              <display-group id="oracle.ide.project.display-group.dependencies">
+                <component class="oracle.ide.extsamples.projectinspector.ProjectDependencyComponent" />
+              </display-group>
+            </category-layout>
+        </property-form-layout>
+      </property-form-layouts>
+        
+    </property-inspector-hook>
+
+  </hooks>
+</extension>

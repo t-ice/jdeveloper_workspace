@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="dashboard">
+    <page>/dashboard.jsf</page>
+  </view>
+  <managed-bean id="__2">
+    <managed-bean-name>panelBean</managed-bean-name>
+    <managed-bean-class>view.PanelBean</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

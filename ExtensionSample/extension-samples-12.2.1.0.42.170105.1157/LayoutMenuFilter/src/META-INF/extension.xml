@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/LayoutMenuFilter/src/META-INF/extension.xml /main/13 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   aalmiray    09/21/09 - XbranchMerge aalmiray_fix_esdk_samples from
+                          st_jdevadf_patchset_ias
+   ltribble    08/16/08 - 
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       04/04/07 - Bug 5957834 - Use UTF-8
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.ide.extsamples.layoutmenufilter" version="11.1.1"
+           esdk-version="1.0">
+  <name>ESDK Sample - LayoutMenuFilter</name>
+    
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+ 
+<trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+   <!-- 
+        Define an action that will be used in various menus and toolbars.
+        You can set any Swing action property on the action. The controller
+        class implements oracle.ide.controller.Controller and determines
+        when the action is enabled and what it does.  
+    -->
+      <actions xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <action id="esdksample.ToggleMinimalMode">
+          <properties>
+            <!--
+             You can use an ampersand (escaped as &amp;) in the Name property
+             to specify the mnemonic for any menu items containing the action.
+             -->
+            <property name="Name">ESDK Sample : Clickable URL </property>
+             <!-- use an icon, stealing this one from predefined icons              
+                  make sure you have oracle.icon as a required bundle to
+                  pick up this icon at run time from the icons module  -->
+            <property name="SmallIcon">${OracleIcons.URL_VIEW_ACTIVITY}</property>
+            <property name="LongDescription">ESDK Sample : Clickable URL </property>
+          </properties>
+        </action>
+      </actions> 
+     
+ 
+      <controllers xmlns="http://xmlns.oracle.com/ide/extension">
+        <controller class="oracle.ide.extsamples.layoutmenufilter.LayoutMenuFilterController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="esdksample.ToggleMinimalMode">
+                <label>ESDK Sample : Toggle LayoutMenuFilter </label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller>
+      </controllers>
+      
+     <context-menu-hook rule="always-enabled">
+      <site idref="navigator"/>
+        <menu>
+          <!-- 'weight' is used to control where the section appears in
+           the menu. Weights are sorted in ascending order, each unique
+           value is its own section. -->
+          <!-- section element must be in namespace
+           http://jcp.org/jsr/198/extension-manifest. -->
+          <section xmlns="http://jcp.org/jsr/198/extension-manifest" id="MY_CUSTOM_MENU_SECTION_ONE" weight="1.0">
+            <!-- For menu items and submenus, weight determines the
+             order within a menu section. Items are sorted in ascending
+             order or in the order they are added if the weight is not
+               unique. -->
+           <item action-ref="esdksample.ToggleMinimalMode"></item>
+           </section>
+       </menu>
+    </context-menu-hook>
+    
+    <menu-hook  xmlns="http://jcp.org/jsr/198/extension-manifest">
+      <menus>
+        <menubar id="javax.ide.view.MAIN_WINDOW_MENUBAR_ID">
+           <menu id="javax.ide.FILE_MENU_ID">
+            <section id="ESDK" weight="2.0">
+              <item action-ref="esdksample.ToggleMinimalMode" /> 
+            </section>
+          </menu>
+        </menubar>
+      </menus>
+    </menu-hook>        
+ </triggers>    
+</trigger-hooks>
+ 
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <actions>
+        <action id="ESDK.ToggleMinimalMode">
+          <properties>
+            <property name="Name">Toggle Minimal Mode (ESDK Sample)</property>
+          </properties>
+          <controller-class>oracle.ide.extsamples.layoutmenufilter.LayoutMenuFilterController</controller-class>
+        </action>
+      </actions>
+      
+      <addins>
+        <addin>oracle.ide.extsamples.layoutmenufilter.LayoutMenuFilterAddin</addin>
+      </addins>
+    </jdeveloper-hook>
+  </hooks>   
+</extension>

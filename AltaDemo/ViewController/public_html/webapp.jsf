@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="webapp.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelStretchLayout id="psl1" startWidth="200px">
+                <f:facet name="top">
+                    <af:panelGroupLayout id="pgl1" inlineStyle="background-color:#ededed;" layout="vertical">
+                        <af:image source="resources/img/KreDaLogo.png" id="i1"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="start">
+                    <af:panelBorderLayout id="pbl1">
+                        <f:facet name="start">
+                            <af:spacer width="10" height="10" id="s4"/>
+                        </f:facet>
+                        <f:facet name="end">
+                            <af:spacer width="10" height="10" id="s8"/>
+                        </f:facet>
+                        <af:panelGroupLayout id="pgl2" layout="vertical" styleClass="menu">
+                            <af:spacer width="10" height="10" id="s3"/>
+                            <af:outputText value="Übersicht" id="ot1"/>
+                            <af:separator id="s1"/>
+                            <af:navigationPane hint="list" id="np1">
+                                <af:commandNavigationItem text="Branding Area" id="cni1" selected="true"
+                                                          styleClass="marginLeft"/>
+                                <af:commandNavigationItem text="Drawer" id="cni2" styleClass="marginLeft"/>
+                            </af:navigationPane>
+                            <af:outputText value="Verwaltung" id="ot2"/>
+                            <af:separator id="s2"/>
+                            <af:navigationPane hint="list" id="np3">
+                                <af:commandNavigationItem text="Berechtigungen" id="cni4" styleClass="marginLeft"/>
+                                <af:commandNavigationItem text="Farbauswahl" id="cni34" styleClass="marginLeft"/>
+                            </af:navigationPane>
+                        </af:panelGroupLayout>
+                    </af:panelBorderLayout>
+                </f:facet>
+                <f:facet name="center">
+                    <af:panelStretchLayout id="pgl3" startWidth="10px" endWidth="10px" topHeight="10px"
+                                           bottomHeight="10px">
+                        <f:facet name="center">
+                            <af:panelHeader text="Branding Area" id="ph1">
+                                <f:facet name="context"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="menuBar"/>
+                                <f:facet name="legend"/>
+                                <f:facet name="info"/>
+                                <af:panelGroupLayout id="pgl4" layout="vertical">
+                                    <af:panelBox text="Kundensuche" id="pb1" inlineStyle="margin: 5px;"
+                                                 showHeader="never">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelGroupLayout id="pgl5" layout="horizontal"
+                                                             inlineStyle="margin-top:10px;" valign="middle">
+                                            <af:inputText label="Kunde      " id="it3" value="532"/>
+                                            <af:spacer width="5" height="10" id="s9"/>
+                                            <!--af:icon name="folder" id="ic1" styleClass="search_icon"/-->
+                                            <af:button id="b3" styleClass="search_icon"/>
+                                            <af:spacer width="10" height="10" id="s10"/>
+                                            <af:outputText value="Grillo-Werke GmbH" id="ot3"/>
+                                        </af:panelGroupLayout>
+                                    </af:panelBox>
+                                    <af:panelBox text="Personenauswahl" id="pb2" inlineStyle="margin: 5px;"
+                                                 showDisclosure="false">
+                                        <f:facet name="toolbar"/>
+                                        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                                            <f:facet name="menus"/>
+                                            <f:facet name="toolbar">
+                                                <af:toolbar id="t2">
+                                                    <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                               text="CreateInsert"
+                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
+                                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                                               disabled="#{!bindings.Delete.enabled}" id="b2"/>
+                                                </af:toolbar>
+                                            </f:facet>
+                                            <f:facet name="statusbar"/>
+                                            
+                                        </af:panelCollection>
+                                    </af:panelBox>
+                                    <af:panelBox text="PanelBox2" id="pb3" inlineStyle="margin: 5px;"
+                                                 showDisclosure="false">
+                                        <f:facet name="toolbar"/>
+                                    </af:panelBox>
+                                    <af:panelBox text="PanelBox2" id="pb4" inlineStyle="margin: 5px;"
+                                                 showDisclosure="false">
+                                        <f:facet name="toolbar"/>
+                                    </af:panelBox>
+                                    <af:panelBox text="PanelBox2" id="pb5" inlineStyle="margin: 5px;"
+                                                 showDisclosure="false">
+                                        <f:facet name="toolbar"/>
+                                    </af:panelBox>
+                                    <af:panelTabbed position="above" id="pt1" inlineStyle="margin:5px;">
+                                        <af:showDetailItem id="tab2" text="Grundbuchangaben"/>
+                                        <af:showDetailItem id="tab1" text="Bemerkung" disclosed="true"/>
+                                        <af:showDetailItem id="tab3" text="Sonstiges"/>
+                                    </af:panelTabbed>
+                                </af:panelGroupLayout>
+                            </af:panelHeader>
+                        </f:facet>
+                        <f:facet name="start">
+                            <af:spacer width="10" height="10" id="s6"/>
+                        </f:facet>
+                        <f:facet name="end">
+                            <af:spacer width="10" height="10" id="s7"/>
+                        </f:facet>
+                        <f:facet name="top">
+                            <af:spacer width="10" height="10" id="s5"/>
+                        </f:facet>
+                        <f:facet name="bottom"/>
+                    </af:panelStretchLayout>
+                </f:facet>
+            </af:panelStretchLayout>
+        </af:form>
+    </af:document>
+</f:view>

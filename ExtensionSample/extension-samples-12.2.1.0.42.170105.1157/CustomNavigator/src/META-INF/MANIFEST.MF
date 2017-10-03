@@ -1,0 +1,7 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.ide.navigator,
+ oracle.javatools-nodeps,
+ oracle.ide,
+ oracle.javatools,
+ oracle.idert
+

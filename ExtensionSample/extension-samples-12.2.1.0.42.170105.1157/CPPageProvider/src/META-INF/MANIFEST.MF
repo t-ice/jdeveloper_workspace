@@ -1,0 +1,5 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.javatools-nodeps, 
+ oracle.ide.palette2,
+ oracle.ide
+

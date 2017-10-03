@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/HelloX/src/META-INF/extension.xml /main/11 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   alfarouk    09/16/10 - Adapted to on-demand loading using trigger hooks for Sherman
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       04/04/07 - Bug 5957834 - Use UTF-8
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.ide.extsamples.hellox"
+           version="11.1.1"
+           esdk-version="1.0">
+           
+  <name>ESDK Sample - HelloX</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+      <gallery xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <folders>
+          <name label="ESDK-Gallery Example">ESDK-Gallery Example</name>
+          <category>General</category>
+        </folders>
+        <item rule="always-enabled">
+          <!-- name is the fully-qualified name of an oracle.ide.wizard.Invokable  -->
+          <name>oracle.ide.extsamples.hellox.HelloX</name>
+          <!-- id is optional, and if specified will be stored in the Context
+               so it can be retrieved when the wizard is invoked. -->
+          <id>oracle.ide.extsamples.hellox</id>
+          <!-- description is the short label of the gallery item -->
+          <description>Say Hello Wizard</description>
+          <!-- help is the long label for the gallery item -->
+          <help>Prompts the user to enter his name, and repeats it. Part of the Extension SDK, this is a trivial example.</help>  
+          <icon>/oracle/ide/extsamples/hellox/HelloX.gif</icon>
+          <category>General</category>
+          <folder>ESDK-Gallery Example</folder>
+        </item>
+      </gallery>
+    </triggers>
+  </trigger-hooks>
+</extension>              
+

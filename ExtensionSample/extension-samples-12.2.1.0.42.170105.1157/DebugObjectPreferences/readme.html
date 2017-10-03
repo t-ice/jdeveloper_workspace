@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <title>Extension SDK: DebugObjectPreferences</title>
+    <style type="text/css">
+    <!--
+    body {color: #000000; background-color: #ffffff}
+    .s0 {color: #000000; background-color: transparent}
+    .s1 {color: #000000; background-color: transparent}
+    .s2 {color: #808080; background-color: transparent}
+    .s3 {color: #336699; background-color: transparent; font-weight: bold}
+    .s4 {color: #0033cc; background-color: transparent}
+    .s5 {color: #006600; background-color: transparent}
+    .s6 {color: #000000; background-color: transparent}
+    .s7 {color: #000000; background-color: transparent}
+    .s8 {color: #000000; background-color: transparent}
+    .s9 {color: #006699; background-color: transparent}
+    .s10 {color: #006699; background-color: transparent; font-weight: bold}
+    .s11 {color: #990000; background-color: transparent}
+    .s12 {color: #0033cc; background-color: transparent}
+    .s13 {color: #39396b; background-color: transparent}
+    .s14 {color: #008000; background-color: transparent}
+    .s15 {color: #800000; background-color: transparent}
+    .s16 {color: #808080; background-color: transparent}
+    .s17 {color: #0033cc; background-color: transparent}
+    .s18 {color: #336699; background-color: transparent; font-weight: bold}
+    .s19 {color: #996600; background-color: transparent}
+    .s20 {color: #006600; background-color: transparent}
+    .s21 {color: #000000; background-color: transparent}
+    .s22 {color: #000000; background-color: transparent}
+    .s23 {color: #000000; background-color: transparent}
+    .s24 {color: #009900; background-color: transparent}
+    .s25 {color: #0033cc; background-color: transparent}
+    .s26 {color: #0033cc; background-color: transparent}
+    .s27 {color: #0033cc; background-color: transparent; font-weight: bold}
+    .s28 {color: #808080; background-color: transparent}
+    .s29 {color: #006699; background-color: transparent}
+    .s30 {color: #006699; background-color: transparent; font-weight: bold}
+    .s31 {color: #990000; background-color: transparent}
+    .s32 {color: #0033cc; background-color: transparent}
+    .s33 {color: #808080; background-color: transparent}
+    .s34 {color: #663300; background-color: transparent; font-weight: bold; font-style: italic}
+    .s35 {color: #006699; background-color: transparent; font-weight: bold}
+    .s36 {color: #336699; background-color: transparent; font-weight: bold}
+    .s37 {color: #ff0000; background-color: transparent; font-style: italic}
+    .s38 {color: #0000ff; background-color: transparent; font-weight: bold}
+    .s39 {color: #006600; background-color: transparent}
+    .s40 {color: #0033cc; background-color: transparent}
+    .s41 {color: #993300; background-color: transparent}
+    .s42 {color: #ff0000; background-color: transparent; font-weight: bold}
+    .s43 {color: #3399cc; background-color: transparent}
+    .s44 {color: #9933cc; background-color: transparent}
+    .s45 {color: #808080; background-color: transparent}
+    .s46 {color: #0033cc; background-color: transparent}
+    .s47 {color: #336699; background-color: transparent; font-weight: bold}
+    .s48 {color: #000000; background-color: transparent}
+    .s49 {color: #006600; background-color: transparent}
+    .s50 {color: #000000; background-color: transparent}
+    .s51 {color: #000000; background-color: transparent}
+    .s52 {color: #808080; background-color: transparent}
+    .s53 {color: #990000; background-color: transparent}
+    .s54 {color: #0033cc; background-color: transparent}
+    .s55 {color: #808080; background-color: transparent}
+    .s56 {color: #0033cc; background-color: transparent}
+    .s57 {color: #336699; background-color: transparent; font-weight: bold}
+    .s58 {color: #000000; background-color: transparent}
+    .s59 {color: #006600; background-color: transparent}
+    .s60 {color: #000000; background-color: transparent}
+    .s61 {color: #000000; background-color: transparent}
+    .s62 {color: #808080; background-color: transparent}
+    .s63 {color: #0033cc; background-color: transparent}
+    .s64 {color: #336699; background-color: transparent; font-weight: bold}
+    .s65 {color: #000000; background-color: transparent}
+    .s66 {color: #006600; background-color: transparent}
+    .s67 {color: #000000; background-color: transparent}
+    .s68 {color: #000000; background-color: transparent}
+    .s69 {color: #808080; background-color: transparent}
+    .s70 {color: #0033cc; background-color: transparent}
+    .s71 {color: #336699; background-color: transparent; font-weight: bold}
+    .s72 {color: #000000; background-color: transparent}
+    .s73 {color: #006600; background-color: transparent}
+    .s74 {color: #000000; background-color: transparent}
+    .s75 {color: #000000; background-color: transparent}
+    .s76 {color: #39396b; background-color: transparent}
+    .s77 {color: #008000; background-color: transparent}
+    .s78 {color: #800000; background-color: transparent}
+    .s79 {color: #808080; background-color: transparent}
+    .s80 {color: #404040; background-color: transparent}
+    .s81 {color: #000000; background-color: transparent}
+    .s82 {color: #000000; background-color: transparent}
+    .s83 {color: #808080; background-color: transparent}
+    .s84 {color: #006699; background-color: transparent}
+    .s85 {color: #006699; background-color: transparent; font-weight: bold}
+    .s86 {color: #990000; background-color: transparent}
+    .s87 {color: #0033cc; background-color: transparent}
+    .s88 {color: #336699; background-color: transparent; font-weight: bold}
+    .s89 {color: #808080; background-color: transparent}
+    .s90 {color: #000000; background-color: transparent}
+    .s91 {color: #0033cc; background-color: transparent}
+    .s92 {color: #000000; background-color: transparent}
+    .s93 {color: #006600; background-color: transparent}
+    .s94 {color: #000000; background-color: transparent}
+    .s95 {color: #000000; background-color: transparent}
+    -->
+    </style>    
+  </head>
+
+  <body>
+    <h3>JDeveloper Extension SDK Sample: DebugObjectPreferences</h3>
+    <p>
+      This sample demonstrates extension manifest support for registering custom object preferences for the debugger. It installs a custom object preference that displays the hue of a color when it is shown in debugger windows. 
+    </p>
+    <p>
+      To see this extension in action, deploy it to JDeveloper or any other FCP application and then follow these steps:
+    </p>
+    <ol>
+      <li>
+        Create a new project.
+      </li>
+      <li>
+        Create a new Java file with the following code:
+<pre>
+<span class="s18">package</span> <span class="s21">mypackage</span><span class="s22">;</span>
+
+<span class="s18">import</span> <span class="s21">java</span><span class="s22">.</span><span class="s21">awt</span><span class="s22">.</span><span class="s21">Color</span><span class="s22">;</span>
+
+<span class="s18">public</span> <span class="s18">class</span> <span class="s21">Class1</span>
+<span class="s23">{</span>
+  <span class="s18">public</span> <span class="s18">static</span> <span class="s18">void</span> <span class="s21">main</span><span class="s23">(</span> <span class="s21">String</span><span class="s23">[]</span> <span class="s21">args</span> <span class="s23">)</span>
+  <span class="s23">{</span>
+    <span class="s21">Color</span> <span class="s21">red</span> <span class="s22">=</span> <span class="s21">Color</span><span class="s22">.</span><span class="s21">RED</span><span class="s22">;</span>
+    <span class="s21">Color</span> <span class="s21">green</span> <span class="s22">=</span> <span class="s21">Color</span><span class="s22">.</span><span class="s21">GREEN</span><span class="s22">;</span>
+  <span class="s23">}</span>
+<span class="s23">}</span>
+</pre>
+      </li>
+      <li>
+        Create a breakpoint on line 10 (green = Color.GREEN;)
+      </li>
+      <li>
+        Start debugging the project.
+      </li>
+      <li>
+        When you hit the breakpoint, notice that the hue&nbsp;of&nbsp;red&nbsp;is&nbsp;shown in the debugger's Data window.
+      </li>
+    </ol>
+    <p>
+      For more information about this sample, see the comments in extension.xml.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/Balloon/src/META-INF/extension.xml /main/8 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   bduff       08/07/07 - Initial Revision
+
+-->
+<extension id="oracle.ide.extsamples.balloon" version="11.1.2.0.0"
+           esdk-version="1.0" xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>ESDK Sample - Balloon</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <addins>
+        <addin>oracle.ide.extsamples.balloon.SampleBalloonAddin</addin>
+      </addins>
+    </jdeveloper-hook>
+  </hooks>
+</extension>

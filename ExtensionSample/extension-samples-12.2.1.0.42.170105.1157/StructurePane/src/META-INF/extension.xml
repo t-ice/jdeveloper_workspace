@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/StructurePane/src/META-INF/extension.xml /main/12 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   aalmiray    09/21/09 - XbranchMerge aalmiray_fix_esdk_samples from
+                          st_jdevadf_patchset_ias
+   ltribble    08/16/08 - 
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       04/04/07 - Bug 5957834 - Use UTF-8
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.ide.extsamples.structurepane"
+           version="11.1.1"
+           esdk-version="1.0">
+  <name>ESDK Sample - StructurePane</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <addins>
+        <addin>oracle.ide.extsamples.structurepane.ProjectStructureAddin</addin>
+      </addins>
+    </jdeveloper-hook>
+  </hooks>
+</extension>            

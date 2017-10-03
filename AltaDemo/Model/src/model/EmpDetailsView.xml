@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpDetailsView"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="EMP_DETAILS_VIEW"
+  AliasName="EmpDetailsView"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    Precision="6"
+    Scale="0"
+    ColumnName="EMPLOYEE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="JobId"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="JOB_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ManagerId"
+    Precision="6"
+    Scale="0"
+    ColumnName="MANAGER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DepartmentId"
+    Precision="4"
+    Scale="0"
+    ColumnName="DEPARTMENT_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="LocationId"
+    Precision="4"
+    Scale="0"
+    ColumnName="LOCATION_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CountryId"
+    Precision="2"
+    ColumnName="COUNTRY_ID"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FirstName"
+    Precision="20"
+    ColumnName="FIRST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastName"
+    IsNotNull="true"
+    Precision="25"
+    ColumnName="LAST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Salary"
+    Precision="8"
+    Scale="2"
+    ColumnName="SALARY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CommissionPct"
+    Precision="2"
+    Scale="2"
+    ColumnName="COMMISSION_PCT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="DepartmentName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="DEPARTMENT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobTitle"
+    IsNotNull="true"
+    Precision="35"
+    ColumnName="JOB_TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="35"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="City"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="CITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StateProvince"
+    Precision="25"
+    ColumnName="STATE_PROVINCE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CountryName"
+    Precision="40"
+    ColumnName="COUNTRY_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RegionName"
+    Precision="25"
+    ColumnName="REGION_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EMP_DETAILS_VIEW"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="EmpdetailsviewPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPDETAILSVIEW_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EmpDetailsView.EmployeeId"/>
+      <Item Value="model.EmpDetailsView.JobId"/>
+      <Item Value="model.EmpDetailsView.ManagerId"/>
+      <Item Value="model.EmpDetailsView.DepartmentId"/>
+      <Item Value="model.EmpDetailsView.LocationId"/>
+      <Item Value="model.EmpDetailsView.CountryId"/>
+      <Item Value="model.EmpDetailsView.FirstName"/>
+      <Item Value="model.EmpDetailsView.LastName"/>
+      <Item Value="model.EmpDetailsView.Salary"/>
+      <Item Value="model.EmpDetailsView.CommissionPct"/>
+      <Item Value="model.EmpDetailsView.DepartmentName"/>
+      <Item Value="model.EmpDetailsView.JobTitle"/>
+      <Item Value="model.EmpDetailsView.City"/>
+      <Item Value="model.EmpDetailsView.StateProvince"/>
+      <Item Value="model.EmpDetailsView.CountryName"/>
+      <Item Value="model.EmpDetailsView.RegionName"/>
+    </AttrArray>
+  </Key>
+</Entity>

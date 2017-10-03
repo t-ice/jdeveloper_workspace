@@ -1,0 +1,3 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.jdeveloper,
+ oracle.ide.runner

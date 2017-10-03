@@ -1,0 +1,6 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.ide,
+ oracle.ide.xmlef,
+ oracle.javatools-nodeps,
+ oracle.xmlef-swing,
+ oracle.xmlef-core

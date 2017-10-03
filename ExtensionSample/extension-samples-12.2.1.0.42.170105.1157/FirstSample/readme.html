@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></meta>
+    <title>Fusion Client Platform ESDK: First Sample</title>
+  </head>
+  <body>
+    <h1>Oracle Fusion Client Platform Extension SDK Samples</h1>
+    
+    <h2>FirstSample Sample</h2><h3>
+      Overview
+    </h3><p>
+      This sample extension installs the following functionality into the product:
+    </p><ul>
+      <li>
+        A gallery item visible via 
+        <strong>File-&gt;New...</strong>
+      </li>
+      <li>
+        An item in the <strong>File</strong> menu.
+      </li>
+      <li>
+        A toolbar button
+      </li>
+      <li>
+        An item in the context menu of the navigator and editor.
+      </li>
+    </ul><h3>
+      Contents
+    </h3>
+    <table cellpadding="2" border="2">
+      <tr>
+        <th>File</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap">
+          extension.xml
+        </td>
+        <td>
+          The extension manifest. This declares all the functionality provided by the extension.
+        </td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap">SimpleContextMenuListener.java</td>
+        <td>A context menu listener, responsible for adding a menu item for an action declared in extension.xml to the navigator and editor context menus.</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap">SimpleController.java</td>
+        <td>The controller determines when the action is enabled, and does the actual work when the user invokes the action. In this sample, the action delegates to the gallery item wizard.</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap">SimpleWizard.java</td>
+        <td>A description of a gallery item wizard. The invoke() method of this class brings up an alert.</td>
+      </tr>
+    </table>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.javatools-nodeps,
+ oracle.javatools,
+ oracle.ide.filequery,
+ oracle.ide.appoverview,
+ oracle.ide,
+ oracle.ide.indexing

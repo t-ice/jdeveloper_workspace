@@ -1,0 +1,7 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.ide.externaltools,
+ oracle.ide,
+ oracle.javatools-nodeps,
+ oracle.jewt-core,
+ oracle.idert,
+ oracle.javatools

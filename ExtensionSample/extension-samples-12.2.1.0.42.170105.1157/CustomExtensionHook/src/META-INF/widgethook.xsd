@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!-- $Header: extension.xml 27-feb-2007.22:44:10 bduff Exp $  -->
+
+<!--
+ Copyright (c) 2007, Oracle. All rights reserved.  
+
+   MODIFIED   (MM/DD/YY)
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:ext="http://jcp.org/jsr/198/extension-manifest"
+            xmlns="http://xmlns.oracle.com/ide/samples/customhooks"
+            targetNamespace="http://xmlns.oracle.com/ide/samples/customhooks"
+            elementFormDefault="qualified">
+  <xsd:import schemaLocation="extension.xsd"
+              namespace="http://jcp.org/jsr/198/extension-manifest"/>
+  <xsd:element name="widgets" substitutionGroup="ext:custom-hook"
+               type="widgetsType">
+    <xsd:annotation>
+      <xsd:documentation>
+        A sample element
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="widgetsType">
+    <xsd:complexContent>
+      <xsd:extension base="ext:customHookType">
+        <xsd:sequence>
+          <xsd:element name="widget" maxOccurs="unbounded">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="name" type="xsd:string"/>
+                <xsd:element name="icon" type="xsd:string" minOccurs="0"
+                             maxOccurs="1"/>
+                <xsd:element name="description" type="xsd:string"
+                             minOccurs="0"/>
+                <xsd:element name="listener-class" type="ext:className"/>
+              </xsd:sequence>
+              <xsd:attribute name="id" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

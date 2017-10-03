@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- $Header: jdev/src/esdk-samples/sample/DockableWindow/src/META-INF/extension.xml /main/15 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       04/04/07 - Bug 5957834 - Use UTF-8
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"              
+           id="oracle.ide.extsamples.dockablewindow"
+           version="11.1.1"
+           esdk-version="1.0">
+  <name>ESDK Sample - DockableWindow</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+      <dockable-factory-hook xmlns="http://xmlns.oracle.com/ide/extension">
+        <factory id="MyDockable" 
+                 class="oracle.ide.extsamples.dockablewindow.MyDockableFactory"/>
+      </dockable-factory-hook>
+    
+    <menu-hook xmlns="http://jcp.org/jsr/198/extension-manifest">
+          <menus>
+             <menubar id="javax.ide.view.MAIN_WINDOW_MENUBAR_ID">
+                <menu id="javax.ide.WINDOW_MENU_ID">
+                   <section id="Main-Section" weight="2.0">
+                      <item action-ref="esdksample.exampleDockable"/>
+                   </section>
+                </menu>
+             </menubar>
+          </menus>
+       </menu-hook>
+       
+       <actions xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <action id="esdksample.exampleDockable">
+          <properties>
+            <property name="Name">Example Dockable (ESDK Sample)</property>
+            <property name="SmallIcon">${OracleIcons.USER}</property>
+            <property name="LongDescription">Example Dockable (ESDK Sample)</property>
+          </properties>
+          <command-class>oracle.ide.extsamples.dockablewindow.ViewDockableCommand</command-class>
+        </action>
+      </actions>
+      
+      <controllers>
+        <controller class="oracle.ide.extsamples.dockablewindow.ViewDockableController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="esdksample.exampleDockable"/>
+            </update-rule>
+          </update-rules>
+        </controller>
+      </controllers>
+    </triggers>    
+    
+  </trigger-hooks>
+  <hooks>
+      <dockable-hook xmlns="http://xmlns.oracle.com/ide/extension">
+        <dockable id="MyDockable"/>
+      </dockable-hook>
+  </hooks>
+</extension>        

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>ikbAlta.desktop</id>
+    <family>ikbAlta</family>
+    <extends>alta-v1.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>resources/css/ikbAlta.css</style-sheet-name>
+    <bundle-name>org.javaplus.adfsamples.view.skinBundle</bundle-name>
+  </skin>
+</skins>

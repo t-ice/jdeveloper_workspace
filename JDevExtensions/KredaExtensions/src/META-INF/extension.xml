@@ -1,0 +1,32 @@
+<extension id="de.ikb.jdev.extension" version="1.0.6" esdk-version="2.0"
+           rsbundle-class="de.ikb.jdev.extension.Res"
+           xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>${EXTENSION_NAME}</name>
+  <owner>${EXTENSION_OWNER}</owner>
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <!-- TODO Declare triggering functionality provided by extension: de.ikb.jdev.extension -->
+    <triggers>
+      <gallery xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <item rule="context-has-project">
+          <name>de.ikb.jdev.extension.train.TrainGeneratorWizard</name>
+          <description>KreDa Train</description>
+          <help>Wizard zur Generierung eines KreDa-Trains</help>
+          <icon>/de/ikb/jdev/extension/train/train.png</icon>
+          <category>General</category>
+          <folder>KreDa</folder>
+        </item>
+        <item rule="context-has-project">
+          <name>de.ikb.jdev.extension.taskflow.KredaTaskflowWizard</name>
+          <description>KreDa Taskflow</description>
+          <help>Erstellt einen Standard-KreDa-Taskflow (Anzeige-Taskflow)</help>
+          <icon>${OracleIcons.TASK_FLOW_DEFINITION}</icon>
+          <category>General</category>
+          <folder>KreDa</folder>
+        </item>
+      </gallery>
+    </triggers>
+  </trigger-hooks>
+  <hooks>
+    <!-- TODO Declare functionality provided by extension: de.ikb.jdev.extension -->
+  </hooks>
+</extension>

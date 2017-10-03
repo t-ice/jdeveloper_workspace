@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('font-awesome-4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');
+    src: url('font-awesome-4.7.0/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0')format('embedded-opentype'), url('font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0')format('woff2'), url('font-awesome-4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0')format('woff'), url('font-awesome-4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0')format('truetype'), url('font-awesome-4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular')format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+af|panelHeader::title0 {
+    background-color: #0072AB;
+    padding-left: 15px;
+    padding-top: 7px;
+    padding-right: 7px;
+    padding-bottom: 6px;
+}
+
+af|panelHeader::title-text0 {
+    color: #f7f7f7;
+    font-family: Segoe UI;
+    font-weight: 600;
+}
+
+af|panelHeader::content0 {
+    border: 1px solid #D6DFE6;
+    border-radius: 2px;
+    background-color: #ededed;
+}
+
+af|selectOneChoice::content {
+    border: 1px solid #D6DFE6;
+    border-radius: 2px;
+    height: 22px;
+}
+
+.menu af|outputText {
+    font-size: large;
+    font-family: Segoe UI;
+    font-weight: 600;
+}
+
+.menu af|navigationPane-list {
+    margin-left: 20px;
+    font-family: Segoe UI;
+    font-weight: 400;
+}
+
+.menu af|navigationPane-list::bullet:selected {
+    border-left: 5px solid #0072AB;
+}
+
+.menu af|navigationPane-list::link:selected {
+    font-size: medium;
+}
+
+.menu af|navigationPane-list::link {
+    font-size: medium;
+}
+
+.menu af|navigationPane-list {
+    padding: 5px 5px 5px 5px;
+}
+
+.search_icon:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    margin-top: 4px;
+    display: block;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: medium;
+    margin-bottom: -2px;
+}
+
+af|button::text {
+    margin-bottom: -2px;
+}

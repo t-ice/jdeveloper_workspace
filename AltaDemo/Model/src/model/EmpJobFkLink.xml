@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpJobFkLink"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EmpJobFkAssoc">
+  <ViewLinkDefEnd
+    Name="JobsView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.JobsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="JobsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.JobsView.JobId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EmployeesView"
+    Cardinality="-1"
+    Owner="model.EmployeesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="EmployeesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EmployeesView.JobId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

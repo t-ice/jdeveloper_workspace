@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+    <af:document title="dashboard.jsf" id="d1">
+        <af:form id="f1">
+            <af:masonryLayout id="ml1" partialTriggers="cmi1 cmi2 cmi3 cmi4 cmi5">
+                <af:panelGroupLayout id="pgl1"
+                                     styleClass="AFMasonryTileSize#{pageFlowScope.panelBean.panelSize} tileStyle">
+                    <af:menuBar id="mb1">
+                        <af:menu text="Größe" id="m1">
+                            <af:commandMenuItem text="1x2" id="cmi1">
+                                <af:setPropertyListener from='1x2' to="#{pageFlowScope.panelBean.panelSize}"
+                                                        type="action"/>
+                            </af:commandMenuItem>
+                            <af:commandMenuItem text="2x1" id="cmi2">
+                                <af:setPropertyListener from='2x1' to="#{pageFlowScope.panelBean.panelSize}"
+                                                        type="action"/>
+                            </af:commandMenuItem>
+                            <af:commandMenuItem text="2x2" id="cmi3">
+                                <af:setPropertyListener from='2x2' to="#{pageFlowScope.panelBean.panelSize}"
+                                                        type="action"/>
+                            </af:commandMenuItem>
+                            <af:commandMenuItem text="3x2" id="cmi4">
+                                <af:setPropertyListener from='3x2' to="#{pageFlowScope.panelBean.panelSize}"
+                                                        type="action"/>
+                            </af:commandMenuItem>
+                            <af:commandMenuItem text="1x3" id="cmi5">
+                                <af:setPropertyListener from='1x3' to="#{pageFlowScope.panelBean.panelSize}"
+                                                        type="action"/>
+                            </af:commandMenuItem>
+                        </af:menu>
+                    </af:menuBar>
+                    <dvt:funnelChart id="chart1"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl2" styleClass="AFMasonryTileSize1x2 tileStyle">
+                    <dvt:dialGauge id="dialGauge1">
+                        <dvt:gaugeMetricLabel rendered="true" id="gml1"/>
+                    </dvt:dialGauge>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl3" styleClass="AFMasonryTileSize2x1 tileStyle">
+                    <dvt:dialGauge id="dialGauge2">
+                        <dvt:gaugeMetricLabel rendered="true" id="gml2"/>
+                    </dvt:dialGauge>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl4" styleClass="AFMasonryTileSize3x2 tileStyle">
+                    <dvt:dialGauge id="dialGauge3">
+                        <dvt:gaugeMetricLabel rendered="true" id="gml3"/>
+                    </dvt:dialGauge>
+                </af:panelGroupLayout>
+            </af:masonryLayout>
+        </af:form>
+    </af:document>
+</f:view>

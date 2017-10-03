@@ -1,0 +1,13 @@
+<update-bundle version="1.0" 
+                xmlns="http://xmlns.oracle.com/jdeveloper/updatebundle" 
+                xmlns:u="http://xmlns.oracle.com/jdeveloper/update"> 
+   <!-- The id *MUST* match exactly the id in your extension.xml. --> 
+   <u:update id="de.ikb.jdev.extension"> 
+     <!-- The name of your extension as you want it to appear under the check for update menu --> 
+     <u:name>KredaExtensions</u:name> 
+     <!-- The version *MUST* match exactly the version in your extension.xml. --> 
+     <u:version>1.0.6</u:version> 
+     <u:author>Christian Theis</u:author>      
+     <u:description>Extension zum Generieren von Trains und Standard-Taskflows</u:description> 
+   </u:update> 
+ </update-bundle> 

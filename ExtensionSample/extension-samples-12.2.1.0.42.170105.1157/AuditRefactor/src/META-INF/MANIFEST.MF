@@ -1,0 +1,9 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.jdeveloper,
+ oracle.ide.audit,
+ oracle.ide.audit.core,
+ oracle.ide,
+ oracle.jdeveloper.common,
+ oracle.jdeveloper.refactoring,
+ oracle.javatools-nodeps
+

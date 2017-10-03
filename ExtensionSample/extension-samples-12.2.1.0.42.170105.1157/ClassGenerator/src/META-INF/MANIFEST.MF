@@ -1,0 +1,10 @@
+Bundle-ClassPath: .
+Require-Bundle: oracle.jdeveloper.java.core,
+ oracle.jdeveloper,
+ oracle.ide,
+ oracle.ide.library,
+ oracle.javamodel-rt,
+ oracle.javatools-nodeps,
+ oracle.idert,
+ oracle.jewt-core,
+ oracle.javatools

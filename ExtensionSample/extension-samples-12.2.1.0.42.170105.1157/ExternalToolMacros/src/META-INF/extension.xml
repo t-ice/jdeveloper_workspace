@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/ExternalToolMacros/src/META-INF/extension.xml /main/7 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   bduff       08/08/07 - Initial Revision
+
+-->
+<extension id="oracle.ide.extsamples.externaltoolmacros" version="11.1.1"
+           esdk-version="1.0" xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>ESDK Sample - External Tool Macros</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+   <triggers>
+     <externaltools xmlns="http://xmlns.oracle.com/ide/extension">
+        <macro macro="sample.user.name"
+               name="User name (ESDK Sample)"
+               description="The current user's username (provided by the ExternalToolsMacro sample)"
+               implClass="oracle.ide.extsamples.externaltoolmacros.UserNameMacro" />
+     </externaltools>
+   </triggers>
+  </trigger-hooks>
+
+</extension>

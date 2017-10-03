@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- $Header: jdev/src/esdk-samples/sample/CreateDialog/src/META-INF/extension.xml /main/12 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   alfarouk    09/19/10 - Modified for on-demand loading
+   aalmiray    09/21/09 - XbranchMerge aalmiray_fix_esdk_samples from
+                          st_jdevadf_patchset_ias
+   ltribble    08/16/08 - 
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       04/09/07 - Initial Revision
+
+-->
+
+<extension id="oracle.ide.extsamples.createdialog" version="11.1.1"
+           esdk-version="1.0" xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>Create Dialog</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+ <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+  <triggers>
+      <gallery xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <!-- Define our own folder in the gallery in which
+             to place the gallary item -->
+        <folders>
+          <name label="ESDK-Gallery Example">ESDK-Gallery Example</name>
+          <category>General</category>
+        </folders>
+        <item rule="always-enabled">
+          <!-- name is the fully-qualified name of an oracle.ide.wizard.Invokable  -->
+          <name>oracle.ide.extsamples.createdialog.PropertiesFileWizard</name>
+          <!-- id is optional, and if specified will be stored in the Context
+               so it can be retrieved when the wizard is invoked. -->
+          <id>oracle.ide.extsamples.createdialog</id>
+          <!-- description is the short label of the gallery item -->
+
+          <description>Create a Dialog</description>
+          <!-- help is the long label for the gallery item -->
+          <help>Creates a Dialog Part of the Extension SDK</help>  
+           
+          <!-- An icon for the item. We are stealing from Oracle Icons. -->
+          <icon>${OracleIcons.LABEL}</icon>         
+
+          <!-- place the item in the folder we defined above -->
+          <folder>ESDK-Gallery Example</folder>
+          <category>General</category>
+        </item>
+      </gallery>
+  </triggers>
+ </trigger-hooks>
+</extension>

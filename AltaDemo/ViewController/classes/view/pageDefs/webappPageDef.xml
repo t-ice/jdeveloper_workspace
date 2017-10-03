@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="webappPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Personen" RangeSize="25" DataControl="AppModuleDataControl" id="PersonenIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PersonenIterator" id="Personen">
+      <nodeDefinition DefName="model.PersonenVO" Name="Personen0">
+        <AttrNames>
+          <Item Value="Name"/>
+          <Item Value="Abteilung"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PersonenIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PersonenIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- $Header: jdev/src/esdk-samples/sample/CustomNavigator/src/META-INF/extension.xml /main/12 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   aalmiray    09/21/09 - XbranchMerge aalmiray_fix_esdk_samples from
+                          st_jdevadf_patchset_ias
+   ltribble    08/16/08 - 
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.ide.extsamples.customnavigator" version="11.1.1"
+           esdk-version="1.0">
+  <name>ESDK Sample - Custom Navigator</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <actions>
+        <!-- The action to display our navigator, appears in the View menu -->
+        <action id="esdk.ShowFavoritesNavigator">
+          <properties>
+            <property name="Name">&amp;Favorites Navigator</property>
+            <property name="SmallIcon">res:/oracle/ide/extsamples/customnavigator/favorites.png</property>
+          </properties>
+        </action>
+        
+        <!-- The action to add a file to the favorites folder. -->
+        <action id="esdk.AddFavorite">
+          <properties>
+            <property name="Name">Add to Favorites</property>
+            <property name="SmallIcon">res:/oracle/ide/extsamples/customnavigator/favorites.png</property>
+          </properties>
+          <controller-class>oracle.ide.extsamples.customnavigator.FavoritesController</controller-class>
+        </action>
+      </actions>
+      
+      <!-- Addin to initialize our navigator manager -->
+      <addins>
+        <addin>oracle.ide.extsamples.customnavigator.FavoritesNavigatorAddin</addin>
+      </addins>
+      
+      <!-- Navigator context menu listener that adds the selected file to favorites -->
+      <context-menu-listeners>
+        <site idref="navigator">
+          <listener-class>oracle.ide.extsamples.customnavigator.FavoritesContextMenuListener</listener-class>
+        </site>
+      </context-menu-listeners>
+      
+    </jdeveloper-hook>
+    
+    <menu-hook>
+    
+      <!-- Add the "Favorites Navigator" menu item to the View menu -->
+      <menus>
+        <menubar id="javax.ide.view.MAIN_WINDOW_MENUBAR_ID">
+          <menu id="javax.ide.WINDOW_MENU_ID">
+            <section id="esdk.showFavoritesSection">
+              <item action-ref="esdk.ShowFavoritesNavigator" />
+            </section>
+          </menu>
+        </menubar>
+      </menus>
+      
+      <!-- Define the toolbar for the favorites navigator. The id of the toolbar
+           should match the id returned by getViewCategory() in your 
+           DefaultNavigatorManager subclass with ".Toolbar" appended. -->
+      <toolbars>
+        <toolbar id="ESDKFavoritesNavigator.Toolbar">
+          <section id="esdk.FavoritesNavigator.mainSection">
+            <item action-ref="Ide.DELETE_CMD_ID" />
+          </section>
+        </toolbar>
+      </toolbars>
+    </menu-hook>
+  </hooks>
+</extension>

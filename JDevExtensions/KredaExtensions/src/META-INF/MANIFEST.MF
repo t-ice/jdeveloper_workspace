@@ -1,0 +1,11 @@
+Bundle-ManifestVersion: 2
+Bundle-Version: 1.0.0
+Bundle-SymbolicName: de.ikb.jdev.extension
+Bundle-ClassPath:  .,freemarker-2.3.25.jar
+Require-Bundle: oracle.ide,
+ oracle.icons,
+ oracle.javatools-nodeps,
+ oracle.javamodel-rt,
+ oracle.idert,
+ org.apache.commons.lang3,
+ oracle.ide.gallery

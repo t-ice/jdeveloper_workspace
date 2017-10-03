@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/ExternalToolCreation/src/META-INF/extension.xml /main/7 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   bduff       08/08/07 - Initial Revision
+
+-->
+<extension id="oracle.ide.extsamples.externaltoolcreation" version="11.1.1"
+           esdk-version="1.0" xmlns="http://jcp.org/jsr/198/extension-manifest">
+  <name>ESDK Sample - External Tool Creation</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+<trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+    <!-- Install an action to create an external tool -->
+      <actions xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <action id="oracle.ide.samples.extsamples.externaltoolcreation.CreateExternalToolAction">
+          <properties>
+             <property name="Name">ESDK Sample: Create External Tool</property>
+            <property name="LongDescription">ESDK Sample: Create External Tool</property>
+          </properties>
+        </action>
+      </actions> 
+     
+      <controllers xmlns="http://xmlns.oracle.com/ide/extension">
+        <controller class=" oracle.ide.extsamples.externaltoolcreation.ExternalToolCreationController">
+          <update-rules>
+            <update-rule rule="always-enabled">
+              <action id="oracle.ide.samples.extsamples.externaltoolcreation.CreateExternalToolAction">
+                <label>ESDK Sample: Create External Tool</label>
+              </action>
+            </update-rule>
+          </update-rules>
+        </controller>
+      </controllers>
+      
+      
+    
+    <menu-hook  xmlns="http://jcp.org/jsr/198/extension-manifest">
+      <menus>
+        <menubar id="javax.ide.view.MAIN_WINDOW_MENUBAR_ID">
+            <menu id="View">
+            <section id="ESDK" weight="2.0">
+              <item action-ref="oracle.ide.samples.extsamples.externaltoolcreation.CreateExternalToolAction" /> 
+            </section>
+          </menu>
+        </menubar>
+      </menus>
+    </menu-hook>        
+ </triggers>    
+</trigger-hooks>
+
+</extension>

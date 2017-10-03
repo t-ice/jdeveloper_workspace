@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- $Header: jdev/src/esdk-samples/sample/ConfigPanel/src/META-INF/extension.xml /main/14 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   alfarouk    09/17/10 - Modified for on-demand loading
+   aalmiray    09/21/09 - XbranchMerge aalmiray_fix_esdk_samples from
+                          st_jdevadf_patchset_ias
+   ltribble    08/16/08 - 
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+-->
+
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+              id="oracle.ide.extsamples.configpanel"
+              version="11.1.1"
+              esdk-version="1.0">
+  <name>ESDK Sample - ConfigPanel</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+      <actions xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+        <action id="esdk.configpanel.writeToLog">
+          <properties>
+            <property name="Name">ESDK Sample:Show User Information</property>
+          </properties>
+          <command-class>oracle.ide.extsamples.configpanel.LogUserInformationCommand</command-class>
+        </action>
+      </actions>
+      <menu-hook  xmlns="http://jcp.org/jsr/198/extension-manifest">
+        <menus>
+          <menubar id="javax.ide.view.MAIN_WINDOW_MENUBAR_ID">
+            <menu id="Tools">
+              <section id="Addins" weight="2.0">
+                <item action-ref="esdk.configpanel.writeToLog"></item>
+              </section>
+            </menu>
+          </menubar>
+        </menus>
+      </menu-hook>
+      <settings-ui-hook>
+        <page id="esdk.UserInformation" parent-idref="/preferences">
+          <label>ESDK Sample: User Information</label>
+          <traversable-class>oracle.ide.extsamples.configpanel.UserInformationPanel</traversable-class>
+        </page>
+      </settings-ui-hook>
+    </triggers>
+  </trigger-hooks>
+
+  <hooks>
+    <jdeveloper-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+      <!-- Register an Addin, which will install menu items etc. -->
+      <addins>
+        <addin>oracle.ide.extsamples.configpanel.UserInformationAddin</addin>
+      </addins>
+    </jdeveloper-hook>
+    
+  </hooks>
+</extension>        

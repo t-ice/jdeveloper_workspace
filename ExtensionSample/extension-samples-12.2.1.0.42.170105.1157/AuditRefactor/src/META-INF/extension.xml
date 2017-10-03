@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- $Header: jdev/src/esdk-samples/sample/AuditRefactor/src/META-INF/extension.xml /main/17 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   ltribble    08/16/08 - 
+   bduff       05/27/08 - Add dependency on oracle.jdeveloper.refactoring.
+   bduff       07/02/07 - Add missing dependency on oracle.javacore.
+   bduff       05/29/07 - Bug 6080680 - Missing imports preventing compile.
+   bduff       04/04/07 - Bug 5957834 - Use UTF-8
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.jdeveloper.extsamples.auditrefactor"
+           version="11.1.2"
+           esdk-version="1.0">
+  <name>ESDK Sample - Audit and Refactoring Integration</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+    
+      <audit-hook id="oracle.jdeveloper.extsamples.auditrefactor" xmlns="http://xmlns.oracle.com/ide/extension">
+      
+        <trigger>
+          <technology>Java</technology>
+        </trigger>
+        
+        <rsbundle-class>oracle.jdeveloper.extsamples.auditrefactor.audit</rsbundle-class>
+
+        <analyzer-definition>oracle.jdeveloper.extsamples.auditrefactor.MethodNames</analyzer-definition>
+                
+        <category-definition id="sample-category">
+          <feature>esdk-samples</feature>
+        </category-definition>
+        
+        <transform-definition id="fix-method-name">
+          <transform-class>oracle.jdeveloper.extsamples.auditrefactor.FixMethodName</transform-class>
+        </transform-definition>
+        
+        <rule-definition id="name-verification">
+          <category>sample-category</category>
+          <enabled>true</enabled>
+          <severity>warning</severity>
+          <parameter name="name" required="true">java.lang.String</parameter>
+          <transform-binding default="true">
+            <transform>fix-method-name</transform>
+          </transform-binding>
+        </rule-definition>
+        
+      </audit-hook>
+
+    </triggers>
+  </trigger-hooks>
+</extension>

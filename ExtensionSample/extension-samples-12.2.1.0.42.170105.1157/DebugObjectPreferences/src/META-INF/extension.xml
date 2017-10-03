@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- $Header: jdev/src/esdk-samples/sample/DebugObjectPreferences/src/META-INF/extension.xml /main/6 2014/03/18 17:54:19 ppark Exp $  -->
+
+<!--
+ Copyright (c) 2007, 2014, Oracle and/or its affiliates. All rights reserved.
+
+   MODIFIED   (MM/DD/YY)
+   bduff       02/27/07 - Added copyright header. Update for 11.1.1
+
+-->
+
+<extension xmlns="http://jcp.org/jsr/198/extension-manifest"
+           id="oracle.jdeveloper.extsamples.debugprefs"
+           version="11.1.1"
+           esdk-version="1.0">
+           
+  <name>ESDK Sample - DebugObjectPreferences</name>
+  <owner>Oracle</owner>
+
+  <feature-member id="esdk-samples" xmlns="http://xmlns.oracle.com/ide/extension"/>
+  
+  <trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension">
+    <triggers>
+        <debugger-hook xmlns="http://xmlns.oracle.com/jdeveloper/1013/extension">
+       
+        <!-- The object expression element installs an object preferences 
+             expression into the debugger. In this example, we're actually
+             calling methods in our expression. You should be wary when doing 
+             this, since methods can be expensive and have unwanted side 
+             effects. -->
+        <object-expression 
+          class="java.awt.Color" 
+          expression="&quot;hue=&quot; + java.awt.Color.RGBtoHSB( getRed(), getGreen(), getBlue(), null )[0]" 
+          selected="true" />
+      
+      </debugger-hook>
+    </triggers>
+  </trigger-hooks>
+</extension>        
