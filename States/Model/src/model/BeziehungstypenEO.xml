@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BeziehungstypenEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="beziehungstypen"
+  AliasName="BeziehungstypenEO"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="beziehungstypen"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Kuerzel"
+    IsUnique="true"
+    Precision="45"
+    ColumnName="KUERZEL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="beziehungstypen">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="45"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Modus"
+    ColumnName="MODUS"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="beziehungstypen">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="BeziehungsZuordnungen"
+    Association="model.FkPers5Assoc"
+    AssociationEnd="model.FkPers5Assoc.BeziehungsZuordnungen"
+    AssociationOtherEnd="model.FkPers5Assoc.Beziehungstypen"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="BeziehungsZuordnungen1"
+    Association="model.FkPers6Assoc"
+    AssociationEnd="model.FkPers6Assoc.BeziehungsZuordnungen1"
+    AssociationOtherEnd="model.FkPers6Assoc.Beziehungstypen1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="BeziehungsZuordnungen2"
+    Association="model.FkBezTyp2Assoc"
+    AssociationEnd="model.FkBezTyp2Assoc.BeziehungsZuordnungen2"
+    AssociationOtherEnd="model.FkBezTyp2Assoc.Beziehungstypen2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="KuerzelUnique">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="KUERZEL_UNIQUE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BeziehungstypenEO.Kuerzel"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BeziehungstypenEO.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="adfc_config___ExecutePageDef"
+                Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Links" RangeSize="25" DataControl="AppModuleServiceDataControl" id="LinksIterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="LinksIterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

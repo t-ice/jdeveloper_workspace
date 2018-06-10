@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkPers4Assoc"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Personen2"
+    Cardinality="1"
+    Source="true"
+    Owner="model.PersonenEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Personen2"/>
+      <Attr Name="_foreignKey" Value="model.PersonenEO.Primary1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PersonenEO.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="BeziehungsZuordnungen2"
+    Cardinality="-1"
+    Owner="model.BeziehungsZuordnungenEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="BeziehungsZuordnungen2"/>
+      <Attr Name="_foreignKey" Value="model.BeziehungsZuordnungenEO.FkPers2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.BeziehungsZuordnungenEO.Person2Id"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

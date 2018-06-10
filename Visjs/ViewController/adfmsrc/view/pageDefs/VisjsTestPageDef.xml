@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="VisjsTestPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Links" RangeSize="25" DataControl="AppModuleServiceDataControl" id="LinksIterator"/>
+    <iterator Binds="Nodes" RangeSize="25" DataControl="AppModuleServiceDataControl" id="NodesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="LinksIterator" id="Links">
+      <nodeDefinition DefName="model.LinksVO" Name="Links0">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="NodeId1"/>
+          <Item Value="NodeId2"/>
+          <Item Value="Kuerzel"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="NodesIterator" id="Nodes">
+      <nodeDefinition DefName="model.NodesVO" Name="Nodes0">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Kbez"/>
+          <Item Value="Level"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

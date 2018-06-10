@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="VisjsTest">
+    <page>/VisjsTest.jsf</page>
+  </view>
+  <method-call id="ExecuteLinks">
+    <method>#{bindings.Execute.execute}</method>
+    <outcome>
+      <fixed-outcome>Execute</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="ExecuteNodes">
+    <method>#{bindings.Execute.execute}</method>
+    <outcome>
+      <fixed-outcome>Execute</fixed-outcome>
+    </outcome>
+  </method-call>
+  <control-flow-rule id="__1">
+    <from-activity-id>ExecuteLinks</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>Execute</from-outcome>
+      <to-activity-id>ExecuteNodes</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>ExecuteNodes</from-activity-id>
+    <control-flow-case id="__4">
+      <from-outcome>Execute</from-outcome>
+      <to-activity-id>VisjsTest</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__5">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__6">
+      <to-activity-id>ExecuteLinks</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PersonenVO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="PersonenEO"
+    Entity="model.PersonenEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="PersonenEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Vorname"
+    PrecisionRule="true"
+    EntityAttrName="Vorname"
+    EntityUsage="PersonenEO"
+    AliasName="Vorname"/>
+  <ViewAttribute
+    Name="Nachname"
+    PrecisionRule="true"
+    EntityAttrName="Nachname"
+    EntityUsage="PersonenEO"
+    AliasName="Nachname"/>
+  <ViewAttribute
+    Name="Ort"
+    PrecisionRule="true"
+    EntityAttrName="Ort"
+    EntityUsage="PersonenEO"
+    AliasName="Ort"/>
+  <ViewLinkAccessor
+    Name="BeziehungsZuordnungen"
+    ViewLink="model.FkPers3Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BeziehungsZuordnungen1"
+    ViewLink="model.FkBezTyp1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="BeziehungsZuordnungen2"
+    ViewLink="model.FkPers4Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

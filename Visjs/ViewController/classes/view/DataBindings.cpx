@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/VisjsTest.jsf" usageId="view_VisjsTestPageDef"/>
+    <page path="PageFlow#ExecuteLinks" usageId="view_adfc_config___ExecutePageDef"/>
+    <page path="PageFlow#ExecuteNodes" usageId="view_adfc_config___ExecutePageDef1"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_VisjsTestPageDef" path="view.pageDefs.VisjsTestPageDef"/>
+    <page id="view_adfc_config___ExecutePageDef" path="view.pageDefs.adfc_config___ExecutePageDef"/>
+    <page id="view_adfc_config___ExecutePageDef1" path="view.pageDefs.adfc_config___ExecutePageDef1"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleServiceDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Buzzwordgenerator" default="build">
+    <path id="pmd.classpath">
+        <pathelement location="C:\Users\Christian\JDeveloper\Workspace\pmd-bin-6.0.1\lib"/>
+        <fileset dir="C:\Users\Christian\JDeveloper\Workspace\pmd-bin-6.0.1\lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+    <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath"/>
+    <target name="pmd">
+        <pmd rulesetfiles="C:\Users\Christian\JDeveloper\Workspace\AltaDemo\ViewController\src\view\TestRuleSet.xml">
+            <auxclasspath>
+                <pathelement path="C:\Users\Christian\JDeveloper\Workspace\AltaDemo\ViewController\src\view\"/>
+                <fileset dir="C:\Users\Christian\JDeveloper\Workspace\AltaDemo\ViewController\src\view\">
+                    <include name="**/*.java"/>
+                </fileset>
+            </auxclasspath>
+            <fileset dir="C:\Users\Christian\JDeveloper\Workspace\AltaDemo">
+                <include name="**/*.java"/>
+            </fileset>
+        </pmd>
+    </target>
+</project>
+

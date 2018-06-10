@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PersonenEO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="personen"
+  AliasName="PersonenEO"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="personen"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Vorname"
+    Precision="255"
+    ColumnName="Vorname"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="personen">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Nachname"
+    Precision="255"
+    ColumnName="Nachname"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="personen">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ort"
+    Precision="255"
+    ColumnName="Ort"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="personen">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="BeziehungsZuordnungen"
+    Association="model.FkPers3Assoc"
+    AssociationEnd="model.FkPers3Assoc.BeziehungsZuordnungen"
+    AssociationOtherEnd="model.FkPers3Assoc.Personen"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="BeziehungsZuordnungen1"
+    Association="model.FkBezTyp1Assoc"
+    AssociationEnd="model.FkBezTyp1Assoc.BeziehungsZuordnungen1"
+    AssociationOtherEnd="model.FkBezTyp1Assoc.Personen1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="BeziehungsZuordnungen2"
+    Association="model.FkPers4Assoc"
+    AssociationEnd="model.FkPers4Assoc.BeziehungsZuordnungen2"
+    AssociationOtherEnd="model.FkPers4Assoc.Personen2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PersonenEO.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

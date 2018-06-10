@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="VisjsTest.jsf" id="d1">
+        <link type="text/css" rel="stylesheet" href="resources/css/vis.min.css" xmlns="http://www.w3.org/1999/xhtml"/>
+        <script type="text/javascript" src="resources/js/vis.min.js" xmlns="http://www.w3.org/1999/xhtml"></script>
+        <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js" xmlns="http://www.w3.org/1999/xhtml"></script>
+        <style type="text/css">
+            #network {
+                width: 600px;
+                height: 400px;
+                border: 1px solid lightgray;
+            }
+        </style>
+        <af:form id="f1">
+            <div xmlns="http://www.w3.org/1999/xhtml" id="network"></div>
+            <af:table value="#{bindings.Links.collectionModel}" var="row" rows="#{bindings.Links.rangeSize}"
+                      emptyText="#{bindings.Links.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.Links.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.Links.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.Links.rangeSize}" id="linkTable">
+                <af:column headerText="#{bindings.Links.hints.Id.label}" id="c1">
+                    <af:outputText value="#{row.Id}" shortDesc="#{bindings.Links.hints.Id.tooltip}" id="ot1">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Links.hints.Id.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.Links.hints.NodeId1.label}" id="c2">
+                    <af:outputText value="#{row.NodeId1}" shortDesc="#{bindings.Links.hints.NodeId1.tooltip}" id="ot2">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Links.hints.NodeId1.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.Links.hints.NodeId2.label}" id="c3">
+                    <af:outputText value="#{row.NodeId2}" shortDesc="#{bindings.Links.hints.NodeId2.tooltip}" id="ot3">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Links.hints.NodeId2.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.Links.hints.Kuerzel.label}" id="c4">
+                    <af:outputText value="#{row.Kuerzel}" shortDesc="#{bindings.Links.hints.Kuerzel.tooltip}" id="ot4"/>
+                </af:column>
+            </af:table>
+            <af:table value="#{bindings.Nodes.collectionModel}" var="row" rows="#{bindings.Nodes.rangeSize}"
+                      emptyText="#{bindings.Nodes.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.Nodes.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.Nodes.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.Nodes.rangeSize}" id="nodeTable">
+                <af:column headerText="#{bindings.Nodes.hints.Id.label}" id="c5">
+                    <af:outputText value="#{row.Id}" shortDesc="#{bindings.Nodes.hints.Id.tooltip}" id="ot5">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Nodes.hints.Id.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.Nodes.hints.Kbez.label}" id="c6">
+                    <af:outputText value="#{row.Kbez}" shortDesc="#{bindings.Nodes.hints.Kbez.tooltip}" id="ot6"/>
+                </af:column>
+                <af:column headerText="#{bindings.Nodes.hints.Level.label}" id="c7">
+                    <af:outputText value="#{row.Level}" shortDesc="#{bindings.Nodes.hints.Level.tooltip}" id="ot7">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Nodes.hints.Level.format}"/>
+                    </af:outputText>
+                </af:column>
+            </af:table>
+            <object xmlns="http://www.w3.org/1999/xhtml"></object>
+            <script type="text/javascript" src="resources/js/graphBuilder.js" xmlns="http://www.w3.org/1999/xhtml"></script>         
+        </af:form>
+    </af:document>
+</f:view>

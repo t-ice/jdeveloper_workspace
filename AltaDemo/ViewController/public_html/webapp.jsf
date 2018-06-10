@@ -48,7 +48,7 @@
                             </af:gridRow>
                             <af:gridRow marginTop="5px" id="gr2" height="auto">
                                 <af:gridCell marginStart="5px" width="70%" id="gc2" valign="stretch" halign="stretch" >
-                                    <af:panelBox text="Personenauswahl" id="pb33" showDisclosure="false" type="flow">
+                                    <af:panelBox text="Personenauswahl" id="pb33" showDisclosure="false" >
                                         <f:facet name="toolbar"/>
                                         <af:panelCollection id="pc1" styleClass="AFStretchWidth">
                                             <f:facet name="menus"/>
@@ -150,7 +150,7 @@
                                 </af:gridCell>
                                 <af:gridCell marginStart="5px" width="30%" marginEnd="5px" id="gc3" valign="stretch"
                                              halign="stretch" >
-                                    <af:panelBox text="Mitarbeiter" id="pb1" showDisclosure="false" type="flow">
+                                    <af:panelBox text="Mitarbeiter" id="pb1" showDisclosure="false">
                                         <f:facet name="toolbar"/>
                                         <af:listView value="#{bindings.EmployeesView21.collectionModel}" var="item"
                                                      emptyText="#{bindings.EmployeesView21.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -176,143 +176,161 @@
                                 <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="gc4">
                                     <af:panelTabbed position="above" id="pt1">
                                         <af:showDetailItem id="tab2" text="Mitarbeiter">
-                                            <af:table value="#{bindings.EmployeesView2.collectionModel}" var="row"
-                                                      rows="#{bindings.EmployeesView2.rangeSize}"
-                                                      emptyText="#{bindings.EmployeesView2.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                                      rowBandingInterval="0"
-                                                      selectedRowKeys="#{bindings.EmployeesView2.collectionModel.selectedRow}"
-                                                      selectionListener="#{bindings.EmployeesView2.collectionModel.makeCurrent}"
-                                                      rowSelection="single"
-                                                      fetchSize="#{bindings.EmployeesView2.rangeSize}" id="t3">
-                                                <af:column sortProperty="#{bindings.EmployeesView2.hints.FirstName.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.EmployeesView2.hints.FirstName.label}"
-                                                           id="c9">
-                                                    <af:inputText value="#{row.bindings.FirstName.inputValue}"
-                                                                  label="#{bindings.EmployeesView2.hints.FirstName.label}"
-                                                                  required="#{bindings.EmployeesView2.hints.FirstName.mandatory}"
-                                                                  columns="#{bindings.EmployeesView2.hints.FirstName.displayWidth}"
-                                                                  maximumLength="#{bindings.EmployeesView2.hints.FirstName.precision}"
-                                                                  shortDesc="#{bindings.EmployeesView2.hints.FirstName.tooltip}"
-                                                                  id="it1">
-                                                        <f:validator binding="#{row.bindings.FirstName.validator}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.EmployeesView2.hints.LastName.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.EmployeesView2.hints.LastName.label}"
-                                                           id="c10">
-                                                    <af:inputText value="#{row.bindings.LastName.inputValue}"
-                                                                  label="#{bindings.EmployeesView2.hints.LastName.label}"
-                                                                  required="#{bindings.EmployeesView2.hints.LastName.mandatory}"
-                                                                  columns="#{bindings.EmployeesView2.hints.LastName.displayWidth}"
-                                                                  maximumLength="#{bindings.EmployeesView2.hints.LastName.precision}"
-                                                                  shortDesc="#{bindings.EmployeesView2.hints.LastName.tooltip}"
-                                                                  id="it2">
-                                                        <f:validator binding="#{row.bindings.LastName.validator}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.EmployeesView2.hints.Email.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.EmployeesView2.hints.Email.label}"
-                                                           id="c11">
-                                                    <af:inputText value="#{row.bindings.Email.inputValue}"
-                                                                  label="#{bindings.EmployeesView2.hints.Email.label}"
-                                                                  required="#{bindings.EmployeesView2.hints.Email.mandatory}"
-                                                                  columns="#{bindings.EmployeesView2.hints.Email.displayWidth}"
-                                                                  maximumLength="#{bindings.EmployeesView2.hints.Email.precision}"
-                                                                  shortDesc="#{bindings.EmployeesView2.hints.Email.tooltip}"
-                                                                  id="it4">
-                                                        <f:validator binding="#{row.bindings.Email.validator}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.EmployeesView2.hints.PhoneNumber.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.EmployeesView2.hints.PhoneNumber.label}"
-                                                           id="c12">
-                                                    <af:inputText value="#{row.bindings.PhoneNumber.inputValue}"
-                                                                  label="#{bindings.EmployeesView2.hints.PhoneNumber.label}"
-                                                                  required="#{bindings.EmployeesView2.hints.PhoneNumber.mandatory}"
-                                                                  columns="#{bindings.EmployeesView2.hints.PhoneNumber.displayWidth}"
-                                                                  maximumLength="#{bindings.EmployeesView2.hints.PhoneNumber.precision}"
-                                                                  shortDesc="#{bindings.EmployeesView2.hints.PhoneNumber.tooltip}"
-                                                                  id="it5">
-                                                        <f:validator binding="#{row.bindings.PhoneNumber.validator}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.EmployeesView2.hints.HireDate.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.EmployeesView2.hints.HireDate.label}"
-                                                           id="c13">
-                                                    <af:inputDate value="#{row.bindings.HireDate.inputValue}"
-                                                                  label="#{bindings.EmployeesView2.hints.HireDate.label}"
-                                                                  required="#{bindings.EmployeesView2.hints.HireDate.mandatory}"
-                                                                  columns="#{bindings.EmployeesView2.hints.HireDate.displayWidth}"
-                                                                  shortDesc="#{bindings.EmployeesView2.hints.HireDate.tooltip}"
-                                                                  id="id1">
-                                                        <f:validator binding="#{row.bindings.HireDate.validator}"/>
-                                                        <af:convertDateTime pattern="#{bindings.EmployeesView2.hints.HireDate.format}"/>
-                                                    </af:inputDate>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.EmployeesView2.hints.JobId.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.EmployeesView2.hints.JobId.label}"
-                                                           id="c14">
-                                                    <af:inputText value="#{row.bindings.JobId.inputValue}"
-                                                                  label="#{bindings.EmployeesView2.hints.JobId.label}"
-                                                                  required="#{bindings.EmployeesView2.hints.JobId.mandatory}"
-                                                                  columns="#{bindings.EmployeesView2.hints.JobId.displayWidth}"
-                                                                  maximumLength="#{bindings.EmployeesView2.hints.JobId.precision}"
-                                                                  shortDesc="#{bindings.EmployeesView2.hints.JobId.tooltip}"
-                                                                  id="it6">
-                                                        <f:validator binding="#{row.bindings.JobId.validator}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.EmployeesView2.hints.Salary.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.EmployeesView2.hints.Salary.label}"
-                                                           id="c15">
-                                                    <af:inputText value="#{row.bindings.Salary.inputValue}"
-                                                                  label="#{bindings.EmployeesView2.hints.Salary.label}"
-                                                                  required="#{bindings.EmployeesView2.hints.Salary.mandatory}"
-                                                                  columns="#{bindings.EmployeesView2.hints.Salary.displayWidth}"
-                                                                  maximumLength="#{bindings.EmployeesView2.hints.Salary.precision}"
-                                                                  shortDesc="#{bindings.EmployeesView2.hints.Salary.tooltip}"
-                                                                  id="it7">
-                                                        <f:validator binding="#{row.bindings.Salary.validator}"/>
-                                                        <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.EmployeesView2.hints.Salary.format}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                                <af:column sortProperty="#{bindings.EmployeesView2.hints.CommissionPct.name}"
-                                                           sortable="true"
-                                                           headerText="#{bindings.EmployeesView2.hints.CommissionPct.label}"
-                                                           id="c16">
-                                                    <af:inputText value="#{row.bindings.CommissionPct.inputValue}"
-                                                                  label="#{bindings.EmployeesView2.hints.CommissionPct.label}"
-                                                                  required="#{bindings.EmployeesView2.hints.CommissionPct.mandatory}"
-                                                                  columns="#{bindings.EmployeesView2.hints.CommissionPct.displayWidth}"
-                                                                  maximumLength="#{bindings.EmployeesView2.hints.CommissionPct.precision}"
-                                                                  shortDesc="#{bindings.EmployeesView2.hints.CommissionPct.tooltip}"
-                                                                  id="it8">
-                                                        <f:validator binding="#{row.bindings.CommissionPct.validator}"/>
-                                                        <af:convertNumber groupingUsed="false"
-                                                                          pattern="#{bindings.EmployeesView2.hints.CommissionPct.format}"/>
-                                                    </af:inputText>
-                                                </af:column>
-                                            </af:table>
-                                            <af:panelBox text="PanelBox2" id="pb3" inlineStyle="margin: 5px;"
-                                                         showDisclosure="false">
-                                                <f:facet name="toolbar"/>
-                                            </af:panelBox>
-                                            <af:panelBox text="PanelBox2" id="pb4" inlineStyle="margin: 5px;"
-                                                         showDisclosure="false">
-                                                <f:facet name="toolbar"/>
-                                            </af:panelBox>
-                                            <af:panelBox text="PanelBox2" id="pb5" inlineStyle="margin: 5px;"
-                                                         showDisclosure="false">
-                                                <f:facet name="toolbar"/>
-                                            </af:panelBox>
+                                            <af:panelGridLayout id="pgl8">
+                                                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                                    <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" valign="stretch" halign="stretch"
+                                                                 id="gc5">
+                                                        <af:panelBox text="PanelBox3" id="pb6" styleClass="darkBox" showDisclosure="false">
+                                                            <f:facet name="toolbar"/>
+                                                            <af:panelCollection id="pc2" styleClass="AFStretchWidth">
+                                                                <f:facet name="menus"/>
+                                                                <f:facet name="toolbar"/>
+                                                                <f:facet name="statusbar"/>
+                                                                <af:table value="#{bindings.EmployeesView2.collectionModel}"
+                                                                          var="row"
+                                                                          rows="#{bindings.EmployeesView2.rangeSize}"
+                                                                          emptyText="#{bindings.EmployeesView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                          rowBandingInterval="0"
+                                                                          selectedRowKeys="#{bindings.EmployeesView2.collectionModel.selectedRow}"
+                                                                          selectionListener="#{bindings.EmployeesView2.collectionModel.makeCurrent}"
+                                                                          rowSelection="single"
+                                                                          fetchSize="#{bindings.EmployeesView2.rangeSize}"
+                                                                          id="t3">
+                                                                    <af:column sortProperty="#{bindings.EmployeesView2.hints.FirstName.name}"
+                                                                               sortable="true"
+                                                                               headerText="#{bindings.EmployeesView2.hints.FirstName.label}"
+                                                                               id="c9">
+                                                                        <af:inputText value="#{row.bindings.FirstName.inputValue}"
+                                                                                      label="#{bindings.EmployeesView2.hints.FirstName.label}"
+                                                                                      required="#{bindings.EmployeesView2.hints.FirstName.mandatory}"
+                                                                                      columns="#{bindings.EmployeesView2.hints.FirstName.displayWidth}"
+                                                                                      maximumLength="#{bindings.EmployeesView2.hints.FirstName.precision}"
+                                                                                      shortDesc="#{bindings.EmployeesView2.hints.FirstName.tooltip}"
+                                                                                      id="it1">
+                                                                            <f:validator binding="#{row.bindings.FirstName.validator}"/>
+                                                                        </af:inputText>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.EmployeesView2.hints.LastName.name}"
+                                                                               sortable="true"
+                                                                               headerText="#{bindings.EmployeesView2.hints.LastName.label}"
+                                                                               id="c10">
+                                                                        <af:inputText value="#{row.bindings.LastName.inputValue}"
+                                                                                      label="#{bindings.EmployeesView2.hints.LastName.label}"
+                                                                                      required="#{bindings.EmployeesView2.hints.LastName.mandatory}"
+                                                                                      columns="#{bindings.EmployeesView2.hints.LastName.displayWidth}"
+                                                                                      maximumLength="#{bindings.EmployeesView2.hints.LastName.precision}"
+                                                                                      shortDesc="#{bindings.EmployeesView2.hints.LastName.tooltip}"
+                                                                                      id="it2">
+                                                                            <f:validator binding="#{row.bindings.LastName.validator}"/>
+                                                                        </af:inputText>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.EmployeesView2.hints.Email.name}"
+                                                                               sortable="true"
+                                                                               headerText="#{bindings.EmployeesView2.hints.Email.label}"
+                                                                               id="c11">
+                                                                        <af:inputText value="#{row.bindings.Email.inputValue}"
+                                                                                      label="#{bindings.EmployeesView2.hints.Email.label}"
+                                                                                      required="#{bindings.EmployeesView2.hints.Email.mandatory}"
+                                                                                      columns="#{bindings.EmployeesView2.hints.Email.displayWidth}"
+                                                                                      maximumLength="#{bindings.EmployeesView2.hints.Email.precision}"
+                                                                                      shortDesc="#{bindings.EmployeesView2.hints.Email.tooltip}"
+                                                                                      id="it4">
+                                                                            <f:validator binding="#{row.bindings.Email.validator}"/>
+                                                                        </af:inputText>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.EmployeesView2.hints.PhoneNumber.name}"
+                                                                               sortable="true"
+                                                                               headerText="#{bindings.EmployeesView2.hints.PhoneNumber.label}"
+                                                                               id="c12">
+                                                                        <af:inputText value="#{row.bindings.PhoneNumber.inputValue}"
+                                                                                      label="#{bindings.EmployeesView2.hints.PhoneNumber.label}"
+                                                                                      required="#{bindings.EmployeesView2.hints.PhoneNumber.mandatory}"
+                                                                                      columns="#{bindings.EmployeesView2.hints.PhoneNumber.displayWidth}"
+                                                                                      maximumLength="#{bindings.EmployeesView2.hints.PhoneNumber.precision}"
+                                                                                      shortDesc="#{bindings.EmployeesView2.hints.PhoneNumber.tooltip}"
+                                                                                      id="it5">
+                                                                            <f:validator binding="#{row.bindings.PhoneNumber.validator}"/>
+                                                                        </af:inputText>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.EmployeesView2.hints.HireDate.name}"
+                                                                               sortable="true"
+                                                                               headerText="#{bindings.EmployeesView2.hints.HireDate.label}"
+                                                                               id="c13">
+                                                                        <af:inputDate value="#{row.bindings.HireDate.inputValue}"
+                                                                                      label="#{bindings.EmployeesView2.hints.HireDate.label}"
+                                                                                      required="#{bindings.EmployeesView2.hints.HireDate.mandatory}"
+                                                                                      columns="#{bindings.EmployeesView2.hints.HireDate.displayWidth}"
+                                                                                      shortDesc="#{bindings.EmployeesView2.hints.HireDate.tooltip}"
+                                                                                      id="id1">
+                                                                            <f:validator binding="#{row.bindings.HireDate.validator}"/>
+                                                                            <af:convertDateTime pattern="#{bindings.EmployeesView2.hints.HireDate.format}"/>
+                                                                        </af:inputDate>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.EmployeesView2.hints.JobId.name}"
+                                                                               sortable="true"
+                                                                               headerText="#{bindings.EmployeesView2.hints.JobId.label}"
+                                                                               id="c14">
+                                                                        <af:inputText value="#{row.bindings.JobId.inputValue}"
+                                                                                      label="#{bindings.EmployeesView2.hints.JobId.label}"
+                                                                                      required="#{bindings.EmployeesView2.hints.JobId.mandatory}"
+                                                                                      columns="#{bindings.EmployeesView2.hints.JobId.displayWidth}"
+                                                                                      maximumLength="#{bindings.EmployeesView2.hints.JobId.precision}"
+                                                                                      shortDesc="#{bindings.EmployeesView2.hints.JobId.tooltip}"
+                                                                                      id="it6">
+                                                                            <f:validator binding="#{row.bindings.JobId.validator}"/>
+                                                                        </af:inputText>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.EmployeesView2.hints.Salary.name}"
+                                                                               sortable="true"
+                                                                               headerText="#{bindings.EmployeesView2.hints.Salary.label}"
+                                                                               id="c15">
+                                                                        <af:inputText value="#{row.bindings.Salary.inputValue}"
+                                                                                      label="#{bindings.EmployeesView2.hints.Salary.label}"
+                                                                                      required="#{bindings.EmployeesView2.hints.Salary.mandatory}"
+                                                                                      columns="#{bindings.EmployeesView2.hints.Salary.displayWidth}"
+                                                                                      maximumLength="#{bindings.EmployeesView2.hints.Salary.precision}"
+                                                                                      shortDesc="#{bindings.EmployeesView2.hints.Salary.tooltip}"
+                                                                                      id="it7">
+                                                                            <f:validator binding="#{row.bindings.Salary.validator}"/>
+                                                                            <af:convertNumber groupingUsed="false"
+                                                                                              pattern="#{bindings.EmployeesView2.hints.Salary.format}"/>
+                                                                        </af:inputText>
+                                                                    </af:column>
+                                                                    <af:column sortProperty="#{bindings.EmployeesView2.hints.CommissionPct.name}"
+                                                                               sortable="true"
+                                                                               headerText="#{bindings.EmployeesView2.hints.CommissionPct.label}"
+                                                                               id="c16">
+                                                                        <af:inputText value="#{row.bindings.CommissionPct.inputValue}"
+                                                                                      label="#{bindings.EmployeesView2.hints.CommissionPct.label}"
+                                                                                      required="#{bindings.EmployeesView2.hints.CommissionPct.mandatory}"
+                                                                                      columns="#{bindings.EmployeesView2.hints.CommissionPct.displayWidth}"
+                                                                                      maximumLength="#{bindings.EmployeesView2.hints.CommissionPct.precision}"
+                                                                                      shortDesc="#{bindings.EmployeesView2.hints.CommissionPct.tooltip}"
+                                                                                      id="it8">
+                                                                            <f:validator binding="#{row.bindings.CommissionPct.validator}"/>
+                                                                            <af:convertNumber groupingUsed="false"
+                                                                                              pattern="#{bindings.EmployeesView2.hints.CommissionPct.format}"/>
+                                                                        </af:inputText>
+                                                                    </af:column>
+                                                                </af:table>
+                                                            </af:panelCollection>
+                                                        </af:panelBox>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                                    <af:gridCell marginStart="5px" width="50%" id="gc6">
+                                                        <af:panelBox text="PanelBox2" id="pb3" showDisclosure="false" background="light">
+                                                            <f:facet name="toolbar"/>
+                                                        </af:panelBox>
+                                                    </af:gridCell>
+                                                    <af:gridCell marginStart="5px" width="50%" marginEnd="5px"
+                                                                 id="gc7">
+                                                        <af:panelBox text="PanelBox2" id="pb4" showDisclosure="false" background="light">
+                                                            <f:facet name="toolbar"/>
+                                                        </af:panelBox>
+                                                    </af:gridCell>
+                                                </af:gridRow>
+                                            </af:panelGridLayout>
                                         </af:showDetailItem>
                                         <af:showDetailItem id="tab1" text="Abteilungen" disclosed="true">
                                             <af:listView value="#{bindings.DepartmentsView2.collectionModel}" var="item"
